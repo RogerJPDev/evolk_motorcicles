@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://evolkmotorcycles.com/sitemap.xml
