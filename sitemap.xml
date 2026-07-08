@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://evolkmotorcycles.com/es/index.html</loc></url>
-  <url><loc>https://evolkmotorcycles.com/es/product.html</loc></url>
-  <url><loc>https://evolkmotorcycles.com/es/vision.html</loc></url>
-  <url><loc>https://evolkmotorcycles.com/es/faq.html</loc></url>
-  <url><loc>https://evolkmotorcycles.com/es/contact.html</loc></url>
-  <url><loc>https://evolkmotorcycles.com/es/privacy.html</loc></url>
-  <url><loc>https://evolkmotorcycles.com/es/cookies.html</loc></url>
   <url><loc>https://evolkmotorcycles.com/ca/index.html</loc></url>
   <url><loc>https://evolkmotorcycles.com/ca/product.html</loc></url>
   <url><loc>https://evolkmotorcycles.com/ca/vision.html</loc></url>
@@ -14,6 +7,13 @@
   <url><loc>https://evolkmotorcycles.com/ca/contact.html</loc></url>
   <url><loc>https://evolkmotorcycles.com/ca/privacy.html</loc></url>
   <url><loc>https://evolkmotorcycles.com/ca/cookies.html</loc></url>
+  <url><loc>https://evolkmotorcycles.com/es/index.html</loc></url>
+  <url><loc>https://evolkmotorcycles.com/es/product.html</loc></url>
+  <url><loc>https://evolkmotorcycles.com/es/vision.html</loc></url>
+  <url><loc>https://evolkmotorcycles.com/es/faq.html</loc></url>
+  <url><loc>https://evolkmotorcycles.com/es/contact.html</loc></url>
+  <url><loc>https://evolkmotorcycles.com/es/privacy.html</loc></url>
+  <url><loc>https://evolkmotorcycles.com/es/cookies.html</loc></url>
   <url><loc>https://evolkmotorcycles.com/it/index.html</loc></url>
   <url><loc>https://evolkmotorcycles.com/it/product.html</loc></url>
   <url><loc>https://evolkmotorcycles.com/it/vision.html</loc></url>

@@ -5,7 +5,7 @@
 
   var GA_ID = "G-XXXXXXXXXX";      // TODO: replace with real GA4 Measurement ID
   var GTM_ID = "GTM-XXXXXXX";      // TODO: replace with real GTM container ID
-  var RECAPTCHA_SITE_KEY = "YOUR_RECAPTCHA_V3_SITE_KEY"; // TODO: replace
+  var CLARITY_ID = "XXXXXXXXXX";   // TODO: replace with real Microsoft Clarity project ID
   var CONTACT_ENDPOINT = "https://api.e-volk.example.com/v1/contact"; // TODO: replace with real backend endpoint
 
   /* ---------- Mobile nav ---------- */
@@ -24,6 +24,15 @@
     });
   }
 
+  /* ---------- Language switcher: close on outside click ---------- */
+  document.querySelectorAll("[data-lang-switch]").forEach(function (details) {
+    document.addEventListener("click", function (e) {
+      if (details.open && !details.contains(e.target)) {
+        details.open = false;
+      }
+    });
+  });
+
   /* ---------- Reveal on scroll ---------- */
   var revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && revealEls.length) {
@@ -41,6 +50,64 @@
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+  }
+
+  /* ---------- USP bar: hidden until scrolled past the hero, then sticks under the header ---------- */
+  var uspBar = document.querySelector("[data-usp-bar]");
+  if (uspBar) {
+    var heroEl = document.querySelector("[data-hero-intro]") || document.querySelector(".hero");
+    var uspTicking = false;
+    function updateUspBar() {
+      if (heroEl) {
+        var heroBottom = heroEl.getBoundingClientRect().bottom;
+        uspBar.classList.toggle("is-visible", heroBottom < 90);
+      }
+      uspTicking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!uspTicking) { window.requestAnimationFrame(updateUspBar); uspTicking = true; }
+    }, { passive: true });
+    updateUspBar();
+  }
+
+  /* ---------- Pinned scroll-reveal images ----------
+     Structure expected:
+     <div class="pinned-image-wrap" data-pinned-image>
+       <div class="pinned-image-sticky">
+         <div class="pinned-image-track"><img ...></div>
+       </div>
+     </div>
+     The wrap is taller than the viewport; while it scrolls past, the image
+     pans from its top portion to its bottom portion inside the pinned frame. */
+  var pinnedWraps = document.querySelectorAll("[data-pinned-image]");
+  if (pinnedWraps.length) {
+    var pinnedItems = Array.prototype.map.call(pinnedWraps, function (wrap) {
+      return {
+        wrap: wrap,
+        sticky: wrap.querySelector(".pinned-image-sticky"),
+        img: wrap.querySelector(".pinned-image-track img")
+      };
+    }).filter(function (it) { return it.sticky && it.img; });
+
+    var pinTicking = false;
+    function updatePinned() {
+      pinnedItems.forEach(function (it) {
+        var rect = it.wrap.getBoundingClientRect();
+        var scrollable = it.wrap.offsetHeight - it.sticky.offsetHeight;
+        if (scrollable <= 0) return;
+        var progress = (-rect.top) / scrollable;
+        progress = Math.max(0, Math.min(1, progress));
+        var maxTranslate = it.img.offsetHeight - it.sticky.offsetHeight;
+        if (maxTranslate <= 0) return;
+        it.img.style.transform = "translateY(-" + (progress * maxTranslate) + "px)";
+      });
+      pinTicking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!pinTicking) { window.requestAnimationFrame(updatePinned); pinTicking = true; }
+    }, { passive: true });
+    window.addEventListener("resize", updatePinned);
+    updatePinned();
   }
 
   /* ---------- Cookie consent (GDPR) ---------- */
@@ -77,8 +144,18 @@
     window.gtag("config", GA_ID, { anonymize_ip: true });
   }
 
+  function loadClarity() {
+    if (window.__clarityLoaded) return;
+    window.__clarityLoaded = true;
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", CLARITY_ID);
+  }
+
   function applyConsent(consent) {
-    if (consent.analytics) loadGoogleAnalytics();
+    if (consent.analytics) { loadGoogleAnalytics(); loadClarity(); }
     if (consent.marketing) loadGoogleTagManager();
   }
 
@@ -139,6 +216,7 @@
   if (form) {
     var statusEl = form.querySelector("[data-form-status]");
     var submitBtn = form.querySelector("[data-form-submit]");
+    var submittedAtField = form.querySelector("[data-submitted-at]");
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -147,11 +225,18 @@
         form.reportValidity();
         return;
       }
-      var captcha = form.querySelector("[data-captcha-checkbox]");
-      if (captcha && !captcha.checked) {
-        showStatus(false, form.getAttribute("data-error-text"));
+
+      // Honeypot: a real visitor never sees or fills this field. If it has a
+      // value, this was filled by a bot — silently show success without
+      // sending anywhere, so the bot gets no signal that it was caught.
+      var honeypot = form.querySelector("[data-honeypot]");
+      if (honeypot && honeypot.value) {
+        showStatus(true, form.getAttribute("data-success-text"));
+        form.reset();
         return;
       }
+
+      if (submittedAtField) submittedAtField.value = new Date().toISOString();
 
       var payload = {
         interest: (form.querySelector('input[name="interest"]:checked') || {}).value || null,
@@ -160,7 +245,7 @@
         phone: form.phone.value.trim() || null,
         consent: !!form.consent.checked,
         locale: document.documentElement.lang,
-        submitted_at: new Date().toISOString()
+        submitted_at: submittedAtField ? submittedAtField.value : new Date().toISOString()
       };
 
       submitBtn.disabled = true;
@@ -170,7 +255,9 @@
       //   1. Encrypting the record (e.g. AES-256) before writing to AWS (DynamoDB/RDS).
       //   2. Sending a confirmation email to the submitter.
       //   3. Notifying pau.pinazo.evolk@gmail.com and roger.joan.evolk@gmail.com.
-      //   4. Verifying the reCAPTCHA / hCaptcha token server-side before accepting the submission.
+      //   4. Re-checking the honeypot field server-side too — a bot that skips
+      //      the JS entirely and POSTs directly to the endpoint would bypass
+      //      this client-side check.
       // This demo posts to a placeholder endpoint — connect CONTACT_ENDPOINT to your real API.
       fetch(CONTACT_ENDPOINT, {
         method: "POST",
