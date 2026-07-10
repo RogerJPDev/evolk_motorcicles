@@ -210,7 +210,7 @@ p{ margin: 0; }
 .pinned-image-wrap{ position: relative; height: 200vh; }
 .pinned-image-sticky{
   position: sticky; top: 96px;
-  height: min(64vh, 620px);
+  height: min(48vh, 465px);
   border-radius: var(--radius-l);
   overflow: hidden;
   background: var(--c-grey);
@@ -221,7 +221,7 @@ p{ margin: 0; }
   object-fit:cover; will-change:transform;
 }
 @media (max-width: 900px){
-  .pinned-image-sticky{ top:76px; height:min(52vh,460px); }
+  .pinned-image-sticky{ top:76px; height:min(39vh,345px); }
   .pinned-image-wrap{ height:170vh; }
 }
 @media (prefers-reduced-motion: reduce){
