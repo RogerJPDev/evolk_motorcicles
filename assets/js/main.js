@@ -3,9 +3,9 @@
 (function () {
   "use strict";
 
-  var GA_ID = "G-XXXXXXXXXX";      // TODO: replace with real GA4 Measurement ID
-  var GTM_ID = "GTM-XXXXXXX";      // TODO: replace with real GTM container ID
-  var CLARITY_ID = "XXXXXXXXXX";   // TODO: replace with real Microsoft Clarity project ID
+  var GA_ID = "G-6ZL1WGB0QX";      // Real GA4 Measurement ID
+  var GTM_ID = "GTM-NBDXFLKF";     // Real GTM container ID
+  var CLARITY_ID = "xk94nk934k";   // Real Microsoft Clarity project ID
   var CONTACT_ENDPOINT = "https://api.e-volk.example.com/v1/contact"; // TODO: replace with real backend endpoint
 
   /* ---------- Mobile nav ---------- */
@@ -50,24 +50,6 @@
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
-  }
-
-  /* ---------- USP bar: hidden until scrolled past the hero, then sticks under the header ---------- */
-  var uspBar = document.querySelector("[data-usp-bar]");
-  if (uspBar) {
-    var heroEl = document.querySelector("[data-hero-intro]") || document.querySelector(".hero");
-    var uspTicking = false;
-    function updateUspBar() {
-      if (heroEl) {
-        var heroBottom = heroEl.getBoundingClientRect().bottom;
-        uspBar.classList.toggle("is-visible", heroBottom < 90);
-      }
-      uspTicking = false;
-    }
-    window.addEventListener("scroll", function () {
-      if (!uspTicking) { window.requestAnimationFrame(updateUspBar); uspTicking = true; }
-    }, { passive: true });
-    updateUspBar();
   }
 
   /* ---------- Pinned scroll-reveal images ----------

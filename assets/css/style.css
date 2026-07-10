@@ -175,18 +175,10 @@ p{ margin: 0; }
   .brand-logo{ height:26px; }
 }
 
-/* USP bar — hidden until the hero has scrolled past, then sticks under the header */
-.usp-bar{
-  position: fixed; top: 74px; left:0; right:0; z-index: 55;
-  background: var(--c-black);
-  padding: 14px 0;
-  transform: translateY(-120%);
-  transition: transform .35s var(--ease);
-  box-shadow: 0 12px 24px rgba(0,0,0,.12);
-}
-.usp-bar.is-visible{ transform: translateY(0); }
-.usp-bar-inner{
+/* USP bar — static, sits right under the hero subtitle */
+.usp-bar-static{
   display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+  margin-top: 6px;
 }
 .usp-pill{
   background: var(--c-green); color: var(--c-black);
@@ -194,8 +186,7 @@ p{ margin: 0; }
   font-weight:600; font-size:.82rem; white-space:nowrap;
 }
 @media (max-width: 900px){
-  .usp-bar{ top: 66px; padding: 10px 0; }
-  .usp-bar-inner{ gap:8px; }
+  .usp-bar-static{ gap:8px; }
   .usp-pill{ padding:7px 14px; font-size:.75rem; }
 }
 
