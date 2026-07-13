@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-media reveal pinned-image-wrap" data-pinned-image>
+      <div class="pinned-image-sticky">
+        <div class="pinned-image-track">
+          <picture>
+            <source srcset="{{ base_path }}/assets/img/hero-rider-female-2.webp" type="image/webp">
+            <img src="{{ base_path }}/assets/img/hero-rider-female-2.jpg" alt="Persona conduciendo una moto eléctrica e-VOLK por una calle urbana" width="1499" height="1049" loading="eager" fetchpriority="high">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container stack" data-hero-intro>
+    <span class="eyebrow">{{ t.home.hero.eyebrow }}</span>
+    <h1>{{ t.home.hero.title }}</h1>
+    <p class="lede">{{ t.home.hero.subtitle }}</p>
+    {% if t.home.usp %}
+    <div class="usp-bar-static">
+      {% for item in t.home.usp %}
+      <span class="usp-pill">{{ item }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <div class="hero-ctas">
+      <a class="btn btn--primary" href="{{ base_path }}/{{ locale }}/product.html">{{ t.home.hero.cta_primary }}</a>
+      <a class="btn btn--outline" href="{{ base_path }}/{{ locale }}/contact.html">{{ t.home.hero.cta_secondary }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--grey">
+  <div class="container">
+    <div class="stack reveal" style="max-width:720px;">
+      <span class="eyebrow">{{ t.home.section2.eyebrow }}</span>
+      <h2>{{ t.home.section2.title }}</h2>
+      <p class="lede">{{ t.home.section2.text }}</p>
+      <p class="lede">{{ t.home.section2.text2 }}</p>
+    </div>
+    <div class="reveal mt-lg" style="max-width:760px;margin-inline:auto;">
+      <div class="media-frame media-frame--wide">
+        <picture>
+          <source srcset="{{ base_path }}/assets/img/public-charging-bcn.webp" type="image/webp">
+          <img src="{{ base_path }}/assets/img/public-charging-bcn.jpg" alt="Persona cargando una moto eléctrica e-VOLK en un punto de carga público de Barcelona" width="1677" height="1258" loading="lazy">
+        </picture>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-lg reveal">
+    <h3>{{ t.home.section2.map_title }}</h3>
+    <p class="lede" style="margin-top:8px;margin-bottom:28px;">{{ t.home.section2.map_text }}</p>
+    <div class="grid-4-maps">
+      <a class="card" href="https://map.electromaps.com/es/" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:10px;">
+        <span class="eyebrow">Electromaps</span>
+        <span style="font-weight:600;">map.electromaps.com</span>
+      </a>
+      <a class="card" href="https://www.mapareve.es/mapa-puntos-recarga" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:10px;">
+        <span class="eyebrow">MAPA REVE</span>
+        <span style="font-weight:600;">mapareve.es</span>
+      </a>
+      <a class="card" href="https://chargemap.com/es-es/map" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:10px;">
+        <span class="eyebrow">Chargemap</span>
+        <span style="font-weight:600;">chargemap.com</span>
+      </a>
+      <a class="card" href="https://map.openchargemap.io/" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:10px;">
+        <span class="eyebrow">Open Charge Map</span>
+        <span style="font-weight:600;">map.openchargemap.io</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--black">
+  <div class="container grid-2">
+    <div class="reveal" style="order:2;">
+      <div class="media-frame media-frame--wide">
+        <picture>
+          <source srcset="{{ base_path }}/assets/img/connector-open.webp" type="image/webp">
+          <img src="{{ base_path }}/assets/img/connector-open.jpg" alt="Compartimento del asiento abierto de e-VOLK mostrando el conector de carga Type 2" width="1254" height="1254" loading="lazy">
+        </picture>
+      </div>
+    </div>
+    <div class="stack reveal" style="order:1;">
+      <span class="eyebrow">{{ t.home.section3.eyebrow }}</span>
+      <h2>{{ t.home.section3.title }}</h2>
+      <p class="lede">{{ t.home.section3.intro }}</p>
+      <ul class="check-list">
+        {% for bullet in t.home.section3.bullets %}
+        <li>{{ bullet }}</li>
+        {% endfor %}
+      </ul>
+      <p class="lede" style="font-weight:600;">{{ t.home.section3.closing }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section text-center">
+  <div class="container stack" style="align-items:center;">
+    <div class="media-frame media-frame--square reveal" style="max-width:360px;">
+      <picture>
+        <source srcset="{{ base_path }}/assets/img/hub-motor-brake.webp" type="image/webp">
+        <img src="{{ base_path }}/assets/img/hub-motor-brake.jpg" alt="Detalle del motor buje y freno de disco de la moto eléctrica e-VOLK" width="726" height="726" loading="lazy">
+      </picture>
+    </div>
+    <h2 class="reveal">{{ t.product.hero_subtitle }}</h2>
+    <a class="btn btn--accent reveal" href="{{ base_path }}/{{ locale }}/product.html">{{ t.home.hero.cta_primary }}</a>
+  </div>
+</section>
+
+{% endblock %}

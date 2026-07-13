@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero" style="padding-bottom:0;text-align:left;">
+  <div class="container stack" style="align-items:flex-start;">
+    <span class="eyebrow">e-VOLK</span>
+    <h1 style="font-size:clamp(2rem,4vw,3rem);">{{ legal.title }}</h1>
+  </div>
+</section>
+
+<section class="section" style="padding-top:32px;">
+  <div class="container">
+    <div class="legal-content">
+      <p class="updated">{{ legal.updated }}</p>
+      <p>{{ legal.intro }}</p>
+      {% for s in legal.sections %}
+      <h2>{{ s.h }}</h2>
+      <p>{{ s.p }}</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

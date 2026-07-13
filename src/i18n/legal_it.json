@@ -1,0 +1,31 @@
+{
+  "privacy": {
+    "title": "Informativa sulla Privacy",
+    "updated": "Ultimo aggiornamento: luglio 2026",
+    "intro": "In e-VOLK prendiamo sul serio la protezione dei tuoi dati personali. Questa informativa spiega quali dati raccogliamo, per quali finalità, la base giuridica che li giustifica e quali diritti hai, in conformità con il Regolamento generale sulla protezione dei dati (GDPR) UE 2016/679 e la normativa nazionale applicabile nel tuo paese.",
+    "sections": [
+      {"h": "1. Titolare del trattamento", "p": "e-VOLK (di seguito \"noi\" o \"e-VOLK\") è il titolare del trattamento dei dati personali raccolti tramite questo sito web. Per qualsiasi richiesta relativa alla privacy, puoi scriverci tramite il modulo di contatto."},
+      {"h": "2. Quali dati raccogliamo", "p": "Raccogliamo i dati che ci fornisci volontariamente tramite il modulo di contatto (email, messaggio e, facoltativamente, telefono), nonché i dati di navigazione raccolti automaticamente tramite cookie e tecnologie simili (Google Analytics e Google Tag Manager), previo tuo consenso."},
+      {"h": "3. Finalità del trattamento", "p": "Utilizziamo i tuoi dati per rispondere alle tue richieste, gestire la tua iscrizione alla lista d'attesa, valutare il tuo interesse a investire in e-VOLK e analizzare l'utilizzo del sito web a fini statistici e di miglioramento continuo."},
+      {"h": "4. Base giuridica", "p": "Il trattamento si basa sul tuo consenso esplicito (modulo di contatto e cookie non essenziali) e, ove applicabile, sul legittimo interesse di e-VOLK per il funzionamento tecnico di base del sito web."},
+      {"h": "5. Conservazione dei dati", "p": "Conserveremo i tuoi dati per il tempo necessario a soddisfare la finalità per cui sono stati raccolti e, successivamente, per i termini di prescrizione legale applicabili."},
+      {"h": "6. Destinatari e trasferimenti", "p": "I tuoi dati sono archiviati in forma crittografata su server di Amazon Web Services (AWS). Alcuni dati di navigazione possono essere trattati da Google (Google Analytics e Google Tag Manager) secondo le loro proprie informative sulla privacy. Non vendiamo né cediamo i tuoi dati personali a terzi per finalità commerciali."},
+      {"h": "7. I tuoi diritti", "p": "Puoi esercitare i tuoi diritti di accesso, rettifica, cancellazione, opposizione, limitazione del trattamento e portabilità dei dati scrivendoci tramite il modulo di contatto. Hai anche il diritto di presentare un reclamo all'autorità di controllo per la protezione dei dati del tuo paese."},
+      {"h": "8. Sicurezza", "p": "Applichiamo misure tecniche e organizzative adeguate, inclusa la crittografia delle informazioni trasmesse e archiviate, per proteggere i tuoi dati personali da accessi non autorizzati, perdita o alterazione."},
+      {"h": "9. Minori", "p": "Questo sito web non è rivolto ai minori. Non raccogliamo consapevolmente dati di minori di 16 anni."},
+      {"h": "10. Modifiche a questa informativa", "p": "Potremmo aggiornare periodicamente questa informativa sulla privacy. Ti consigliamo di consultarla regolarmente."}
+    ]
+  },
+  "cookies": {
+    "title": "Cookie Policy",
+    "updated": "Ultimo aggiornamento: luglio 2026",
+    "intro": "Questo sito web utilizza cookie propri e di terze parti. Questa policy spiega cosa sono i cookie, quali utilizziamo e come puoi gestirli.",
+    "sections": [
+      {"h": "1. Cosa sono i cookie?", "p": "I cookie sono piccoli file di testo memorizzati sul tuo dispositivo quando visiti un sito web. Consentono di riconoscere il tuo browser e ricordare alcune informazioni sulla tua visita."},
+      {"h": "2. Tipi di cookie che utilizziamo", "p": "Cookie necessari: indispensabili per il funzionamento del sito web, non richiedono consenso. Cookie analitici (Google Analytics): ci permettono di capire come gli utenti interagiscono con il sito web. Cookie di marketing (Google Tag Manager): utilizzati per gestire i tag di tracciamento. Queste ultime due categorie si attivano solo previo tuo consenso esplicito."},
+      {"h": "3. Gestione delle tue preferenze", "p": "Puoi accettare, rifiutare o configurare le tue preferenze sui cookie in qualsiasi momento tramite il banner dei cookie o modificando le impostazioni del tuo browser."},
+      {"h": "4. Cookie di terze parti", "p": "Alcuni cookie sono gestiti da terze parti, come Google, secondo le loro proprie informative sulla privacy e sui cookie."},
+      {"h": "5. Maggiori informazioni", "p": "Per maggiori informazioni sul trattamento dei tuoi dati, consulta la nostra Informativa sulla Privacy."}
+    ]
+  }
+}

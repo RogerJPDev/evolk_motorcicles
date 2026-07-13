@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="{{ locale }}" dir="{{ t.dir }}" class="no-js">
+<head>
+<script>document.documentElement.classList.replace('no-js','js');</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ meta.title }}</title>
+<meta name="description" content="{{ meta.description }}">
+<link rel="canonical" href="{{ base_url }}/{{ locale }}/{{ page_path }}">
+{% for loc in locales %}<link rel="alternate" hreflang="{{ loc.hreflang }}" href="{{ base_url }}/{{ loc.code }}/{{ page_path }}">
+{% endfor %}<link rel="alternate" hreflang="x-default" href="{{ base_url }}/ca/{{ page_path }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="e-VOLK">
+<meta property="og:title" content="{{ meta.title }}">
+<meta property="og:description" content="{{ meta.description }}">
+<meta property="og:image" content="{{ base_url }}/assets/img/hero-rider-female-2.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" href="{{ base_path }}/favicon.png" type="image/png">
+<link rel="icon" href="{{ base_path }}/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="{{ base_path }}/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ base_path }}/assets/css/style.css">
+<script type="application/ld+json">
+{{ json_ld | safe }}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">{{ "Saltar al contenido" if locale=="es" else "Saltar al contingut" if locale=="ca" else "Vai al contenuto" if locale=="it" else "Aller au contenu" if locale=="fr" else "Ir para o conteúdo" }}</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="{{ base_path }}/{{ locale }}/index.html" aria-label="e-VOLK — {{ t.footer.tagline }}">
+      <img src="{{ base_path }}/assets/img/logo-wordmark.png" alt="e-VOLK" class="brand-logo" width="170" height="35" loading="eager">
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Main">
+      <a href="{{ base_path }}/{{ locale }}/index.html" {% if page=="home" %}aria-current="page"{% endif %}>{{ t.nav.home }}</a>
+      <a href="{{ base_path }}/{{ locale }}/product.html" {% if page=="product" %}aria-current="page"{% endif %}>{{ t.nav.product }}</a>
+      <a href="{{ base_path }}/{{ locale }}/vision.html" {% if page=="vision" %}aria-current="page"{% endif %}>{{ t.nav.vision }}</a>
+      <a href="{{ base_path }}/{{ locale }}/faq.html" {% if page=="faq" %}aria-current="page"{% endif %}>{{ t.nav.faq }}</a>
+      <a href="{{ base_path }}/{{ locale }}/contact.html" {% if page=="contact" %}aria-current="page"{% endif %}>{{ t.nav.contact }}</a>
+      <a class="btn btn--accent nav-cta" href="{{ base_path }}/{{ locale }}/contact.html">{{ t.nav.cta }}</a>
+    </nav>
+    <div class="header-actions">
+      <details class="lang-switch" data-lang-switch>
+        <summary>{{ t.lang_label }}</summary>
+        <div class="lang-menu">
+          {% for loc in locales %}
+          <a href="{{ base_path }}/{{ loc.code }}/{{ page_path }}" {% if loc.code==locale %}aria-current="true"{% endif %}>{{ loc.lang_label }}</a>
+          {% endfor %}
+        </div>
+      </details>
+      <a class="btn btn--accent header-cta" href="{{ base_path }}/{{ locale }}/contact.html" style="padding:11px 20px;font-size:.85rem;">{{ t.nav.cta }}</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="{{ base_path }}/{{ locale }}/index.html">
+          <img src="{{ base_path }}/assets/img/logo-wordmark-white.png" alt="e-VOLK" class="brand-logo brand-logo--footer" width="150" height="31" loading="lazy">
+        </a>
+        <p>{{ t.footer.tagline }}</p>
+      </div>
+      <div>
+        <h4>{{ t.footer.nav_title }}</h4>
+        <ul>
+          <li><a href="{{ base_path }}/{{ locale }}/index.html">{{ t.nav.home }}</a></li>
+          <li><a href="{{ base_path }}/{{ locale }}/product.html">{{ t.nav.product }}</a></li>
+          <li><a href="{{ base_path }}/{{ locale }}/vision.html">{{ t.nav.vision }}</a></li>
+          <li><a href="{{ base_path }}/{{ locale }}/faq.html">{{ t.nav.faq }}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>{{ t.footer.legal_title }}</h4>
+        <ul>
+          <li><a href="{{ base_path }}/{{ locale }}/privacy.html">{{ t.footer.privacy }}</a></li>
+          <li><a href="{{ base_path }}/{{ locale }}/cookies.html">{{ t.footer.cookies }}</a></li>
+          <li><a href="{{ base_path }}/{{ locale }}/contact.html">{{ t.footer.contact }}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>{{ t.footer.language_title }}</h4>
+        <div class="footer-locales">
+          {% for loc in locales %}
+          <a href="{{ base_path }}/{{ loc.code }}/{{ page_path }}" {% if loc.code==locale %}aria-current="true"{% endif %}>{{ loc.code.upper() }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 e-VOLK. {{ t.footer.rights }}</span>
+      <span>{{ t.footer.under_development }}</span>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" data-cookie-banner
+     data-error-text="{{ t.contact.error_text }}"
+     >
+  <p>{{ t.cookie_banner.text }} <a href="{{ base_path }}/{{ locale }}/cookies.html">{{ t.cookie_banner.policy_link }}</a></p>
+  <div class="cookie-prefs" data-cookie-prefs>
+    <div class="cookie-pref-row"><span>{{ t.cookie_banner.necessary_label }}</span><input type="checkbox" checked disabled></div>
+    <div class="cookie-pref-row"><span>{{ t.cookie_banner.analytics_label }}</span><input type="checkbox" data-cookie-analytics></div>
+    <div class="cookie-pref-row"><span>{{ t.cookie_banner.marketing_label }}</span><input type="checkbox" data-cookie-marketing></div>
+    <button class="btn btn--primary" data-cookie-save style="padding:11px 20px;font-size:.85rem;align-self:flex-start;">{{ t.cookie_banner.save_preferences }}</button>
+  </div>
+  <div class="cookie-banner-actions">
+    <button class="btn btn--primary" data-cookie-accept>{{ t.cookie_banner.accept }}</button>
+    <button class="btn btn--outline" data-cookie-reject>{{ t.cookie_banner.reject }}</button>
+    <button class="btn btn--outline" data-cookie-customize>{{ t.cookie_banner.customize }}</button>
+  </div>
+</div>
+
+<script src="{{ base_path }}/assets/js/main.js" defer></script>
+</body>
+</html>

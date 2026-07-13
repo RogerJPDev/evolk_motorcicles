@@ -1,0 +1,31 @@
+{
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "updated": "Dernière mise à jour : juillet 2026",
+    "intro": "Chez e-VOLK, nous prenons au sérieux la protection de vos données personnelles. Cette politique explique quelles données nous collectons, dans quel but, la base légale qui l'encadre et quels sont vos droits, conformément au Règlement général sur la protection des données (RGPD) UE 2016/679 et à la réglementation nationale applicable dans votre pays.",
+    "sections": [
+      {"h": "1. Responsable du traitement", "p": "e-VOLK (ci-après \"nous\" ou \"e-VOLK\") est responsable du traitement des données personnelles collectées via ce site web. Pour toute question relative à la confidentialité, vous pouvez nous écrire via le formulaire de contact."},
+      {"h": "2. Quelles données collectons-nous", "p": "Nous collectons les données que vous nous fournissez volontairement via le formulaire de contact (email, message et, en option, téléphone), ainsi que les données de navigation collectées automatiquement via des cookies et technologies similaires (Google Analytics et Google Tag Manager), avec votre consentement préalable."},
+      {"h": "3. Finalité du traitement", "p": "Nous utilisons vos données pour répondre à vos demandes, gérer votre inscription à la liste d'attente, évaluer votre intérêt à investir dans e-VOLK et analyser l'utilisation du site web à des fins statistiques et d'amélioration continue."},
+      {"h": "4. Base légale", "p": "Le traitement repose sur votre consentement explicite (formulaire de contact et cookies non essentiels) et, le cas échéant, sur l'intérêt légitime d'e-VOLK pour le fonctionnement technique de base du site web."},
+      {"h": "5. Conservation des données", "p": "Nous conserverons vos données pendant le temps nécessaire pour répondre à la finalité pour laquelle elles ont été collectées, puis pendant les délais de prescription légale applicables."},
+      {"h": "6. Destinataires et transferts", "p": "Vos données sont stockées de manière chiffrée sur des serveurs Amazon Web Services (AWS). Certaines données de navigation peuvent être traitées par Google (Google Analytics et Google Tag Manager) selon leurs propres politiques de confidentialité. Nous ne vendons ni ne cédons vos données personnelles à des tiers à des fins commerciales."},
+      {"h": "7. Vos droits", "p": "Vous pouvez exercer vos droits d'accès, de rectification, de suppression, d'opposition, de limitation du traitement et de portabilité de vos données en nous écrivant via le formulaire de contact. Vous avez également le droit d'introduire une réclamation auprès de l'autorité de contrôle de protection des données de votre pays."},
+      {"h": "8. Sécurité", "p": "Nous appliquons des mesures techniques et organisationnelles appropriées, y compris le chiffrement des informations transmises et stockées, pour protéger vos données personnelles contre tout accès non autorisé, perte ou altération."},
+      {"h": "9. Mineurs", "p": "Ce site web ne s'adresse pas aux mineurs. Nous ne collectons pas sciemment de données concernant des mineurs de moins de 16 ans."},
+      {"h": "10. Modifications de cette politique", "p": "Nous pouvons mettre à jour cette politique de confidentialité périodiquement. Nous vous recommandons de la consulter régulièrement."}
+    ]
+  },
+  "cookies": {
+    "title": "Politique de cookies",
+    "updated": "Dernière mise à jour : juillet 2026",
+    "intro": "Ce site web utilise des cookies internes et tiers. Cette politique explique ce que sont les cookies, lesquels nous utilisons et comment vous pouvez les gérer.",
+    "sections": [
+      {"h": "1. Que sont les cookies ?", "p": "Les cookies sont de petits fichiers texte stockés sur votre appareil lorsque vous visitez un site web. Ils permettent de reconnaître votre navigateur et de mémoriser certaines informations sur votre visite."},
+      {"h": "2. Types de cookies que nous utilisons", "p": "Cookies nécessaires : indispensables au fonctionnement du site web, ils ne nécessitent pas de consentement. Cookies analytiques (Google Analytics) : ils nous permettent de comprendre comment les utilisateurs interagissent avec le site web. Cookies marketing (Google Tag Manager) : utilisés pour gérer les balises de suivi. Ces deux dernières catégories ne s'activent qu'après votre consentement exprès."},
+      {"h": "3. Gestion de vos préférences", "p": "Vous pouvez accepter, refuser ou configurer vos préférences en matière de cookies à tout moment via la bannière de cookies ou en modifiant les paramètres de votre navigateur."},
+      {"h": "4. Cookies tiers", "p": "Certains cookies sont gérés par des tiers, comme Google, conformément à leurs propres politiques de confidentialité et de cookies."},
+      {"h": "5. Plus d'informations", "p": "Pour plus d'informations sur le traitement de vos données, consultez notre Politique de confidentialité."}
+    ]
+  }
+}

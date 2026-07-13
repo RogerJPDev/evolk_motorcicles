@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero">
+  <div class="container stack">
+    <span class="eyebrow">e-VOLK E-01</span>
+    <h1>{{ t.product.hero_title }}</h1>
+    <p class="lede lede--lg">{{ t.product.hero_subtitle }}</p>
+  </div>
+  <div class="container">
+    <div class="hero-media reveal pinned-image-wrap" data-pinned-image>
+      <div class="pinned-image-sticky">
+        <div class="pinned-image-track">
+          <picture>
+            <source srcset="{{ base_path }}/assets/img/studio-white.webp" type="image/webp">
+            <img src="{{ base_path }}/assets/img/studio-white.jpg" alt="e-VOLK E-01 en color blanco, vista de estudio" width="1024" height="1024" loading="eager" fetchpriority="high">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--grey">
+  <div class="container grid-2">
+    <div class="stack reveal">
+      <span class="eyebrow">{{ t.product.specs_title }}</span>
+      <h2>{{ t.product.hero_title }}</h2>
+    </div>
+    <div class="reveal">
+      <ul class="specs-list">
+        {% for spec in t.product.specs %}
+        <li><span class="spec-index">0{{ loop.index }}</span>{{ spec }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--black">
+  <div class="container">
+    <span class="eyebrow reveal">{{ t.product.gallery_title }}</span>
+    <div class="gallery-grid-lg mt-lg">
+      <div class="media-frame media-frame--square reveal">
+        <picture><source srcset="{{ base_path }}/assets/img/seient.webp" type="image/webp">
+        <img src="{{ base_path }}/assets/img/seient.jpg" alt="Detalle del asiento de e-VOLK" width="1127" height="1122" loading="lazy"></picture>
+      </div>
+      <div class="media-frame media-frame--square reveal">
+        <picture><source srcset="{{ base_path }}/assets/img/rider-connector.webp" type="image/webp">
+        <img src="{{ base_path }}/assets/img/rider-connector.jpg" alt="Persona interactuando con el conector de carga de e-VOLK" width="726" height="726" loading="lazy"></picture>
+      </div>
+      <div class="media-frame media-frame--square reveal">
+        <picture><source srcset="{{ base_path }}/assets/img/quadre-comandaments.webp" type="image/webp">
+        <img src="{{ base_path }}/assets/img/quadre-comandaments.jpg" alt="Faro y panel de e-VOLK, foto de estudio" width="1127" height="1122" loading="lazy"></picture>
+      </div>
+      <div class="media-frame media-frame--square reveal">
+        <picture><source srcset="{{ base_path }}/assets/img/garage-charging-young-man.webp" type="image/webp">
+        <img src="{{ base_path }}/assets/img/garage-charging-young-man.jpg" alt="Persona cargando la moto eléctrica e-VOLK en un garaje" width="1254" height="1254" loading="lazy"></picture>
+      </div>
+      <div class="media-frame media-frame--square reveal">
+        <picture><source srcset="{{ base_path }}/assets/img/rear-three-quarter.webp" type="image/webp">
+        <img src="{{ base_path }}/assets/img/rear-three-quarter.jpg" alt="Detalle del asiento, piloto trasero y logotipo e-VOLK" width="726" height="726" loading="lazy"></picture>
+      </div>
+      <div class="media-frame media-frame--square reveal">
+        <picture><source srcset="{{ base_path }}/assets/img/seient.webp" type="image/webp">
+        <img src="{{ base_path }}/assets/img/seient.jpg" alt="Detalle del asiento i el logotip e-VOLK" width="1127" height="1122" loading="lazy"></picture>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section text-center">
+  <div class="container stack" style="align-items:center;">
+    <h2 class="reveal">{{ t.product.development_notice }}</h2>
+    <a class="btn btn--accent reveal" href="{{ base_path }}/{{ locale }}/contact.html">{{ t.product.cta_invest }}</a>
+  </div>
+</section>
+
+{% endblock %}
