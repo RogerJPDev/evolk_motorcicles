@@ -59,23 +59,47 @@
          <div class="pinned-image-track"><img ...></div>
        </div>
      </div>
-     Once the image scrolls into view, it pans from its top portion to its
-     bottom portion automatically over ~2.5s (CSS transition), independent
-     of how much or how fast the user then scrolls. Plays once. */
+     Pans from its top portion to its bottom portion automatically over
+     ~2.5s (CSS transition) once triggered. Triggering rule: if the image
+     is already in view when it becomes eligible (e.g. the hero, visible
+     immediately on load), it waits for the visitor's first scroll input
+     before playing — so nothing moves on page load without the visitor
+     doing anything. If it scrolls into view later (below the fold), it
+     plays immediately, same as before. Plays once per image. */
   var pinnedWraps = document.querySelectorAll("[data-pinned-image]");
   if (pinnedWraps.length && "IntersectionObserver" in window) {
+    var hasScrolled = false;
+    var pendingReveals = [];
+
+    function triggerReveal(wrap) {
+      var sticky = wrap.querySelector(".pinned-image-sticky");
+      var img = wrap.querySelector(".pinned-image-track img");
+      if (!sticky || !img) return;
+      var maxTranslate = img.offsetHeight - sticky.offsetHeight;
+      if (maxTranslate > 0) {
+        img.style.transform = "translateY(-" + maxTranslate + "px)";
+      }
+    }
+
+    function onFirstScroll() {
+      if (hasScrolled) return;
+      hasScrolled = true;
+      pendingReveals.forEach(triggerReveal);
+      pendingReveals = [];
+      window.removeEventListener("scroll", onFirstScroll);
+    }
+    window.addEventListener("scroll", onFirstScroll, { passive: true });
+
     var pinIo = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         var wrap = entry.target;
-        var sticky = wrap.querySelector(".pinned-image-sticky");
-        var img = wrap.querySelector(".pinned-image-track img");
-        if (!sticky || !img) { pinIo.unobserve(wrap); return; }
-        var maxTranslate = img.offsetHeight - sticky.offsetHeight;
-        if (maxTranslate > 0) {
-          img.style.transform = "translateY(-" + maxTranslate + "px)";
-        }
         pinIo.unobserve(wrap);
+        if (hasScrolled) {
+          triggerReveal(wrap);
+        } else {
+          pendingReveals.push(wrap);
+        }
       });
     }, { threshold: 0.3 });
     pinnedWraps.forEach(function (wrap) { pinIo.observe(wrap); });
