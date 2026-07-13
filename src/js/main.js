@@ -59,50 +59,44 @@
          <div class="pinned-image-track"><img ...></div>
        </div>
      </div>
-     Pans from its top portion to its bottom portion automatically over
-     ~2.5s (CSS transition) once triggered. Triggering rule: if the image
-     is already in view when it becomes eligible (e.g. the hero, visible
-     immediately on load), it waits for the visitor's first scroll input
-     before playing — so nothing moves on page load without the visitor
-     doing anything. If it scrolls into view later (below the fold), it
-     plays immediately, same as before. Plays once per image. */
+     Pans between its top portion and its bottom portion, animated over
+     ~2.5s (CSS transition). Reversible: scrolling down past a small
+     threshold reveals the bottom crop; scrolling back up past that same
+     threshold returns to the top crop. Nothing moves on page load until
+     the visitor actually scrolls. */
   var pinnedWraps = document.querySelectorAll("[data-pinned-image]");
-  if (pinnedWraps.length && "IntersectionObserver" in window) {
-    var hasScrolled = false;
-    var pendingReveals = [];
+  if (pinnedWraps.length) {
+    var PIN_SCROLL_THRESHOLD = 30;
+    var pinRevealedState = new WeakMap();
 
-    function triggerReveal(wrap) {
+    function setPinRevealed(wrap, revealed) {
       var sticky = wrap.querySelector(".pinned-image-sticky");
       var img = wrap.querySelector(".pinned-image-track img");
       if (!sticky || !img) return;
       var maxTranslate = img.offsetHeight - sticky.offsetHeight;
-      if (maxTranslate > 0) {
-        img.style.transform = "translateY(-" + maxTranslate + "px)";
-      }
+      img.style.transform = revealed && maxTranslate > 0
+        ? "translateY(-" + maxTranslate + "px)"
+        : "translateY(0px)";
+      pinRevealedState.set(wrap, revealed);
     }
 
-    function onFirstScroll() {
-      if (hasScrolled) return;
-      hasScrolled = true;
-      pendingReveals.forEach(triggerReveal);
-      pendingReveals = [];
-      window.removeEventListener("scroll", onFirstScroll);
-    }
-    window.addEventListener("scroll", onFirstScroll, { passive: true });
+    pinnedWraps.forEach(function (wrap) { pinRevealedState.set(wrap, false); });
 
-    var pinIo = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var wrap = entry.target;
-        pinIo.unobserve(wrap);
-        if (hasScrolled) {
-          triggerReveal(wrap);
-        } else {
-          pendingReveals.push(wrap);
+    var pinTicking = false;
+    function updatePinStates() {
+      pinnedWraps.forEach(function (wrap) {
+        var rect = wrap.getBoundingClientRect();
+        var revealed = (-rect.top) > PIN_SCROLL_THRESHOLD;
+        if (pinRevealedState.get(wrap) !== revealed) {
+          setPinRevealed(wrap, revealed);
         }
       });
-    }, { threshold: 0.3 });
-    pinnedWraps.forEach(function (wrap) { pinIo.observe(wrap); });
+      pinTicking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!pinTicking) { window.requestAnimationFrame(updatePinStates); pinTicking = true; }
+    }, { passive: true });
+    window.addEventListener("resize", updatePinStates);
   }
 
   /* ---------- Cookie consent (GDPR) ---------- */
