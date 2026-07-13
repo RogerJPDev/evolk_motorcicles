@@ -192,7 +192,7 @@ p{ margin: 0; }
 
 /* Hero */
 .hero{
-  padding-block: clamp(70px, 12vw, 130px) clamp(50px, 8vw, 90px);
+  padding-block: clamp(16px, 2vw, 28px) clamp(50px, 8vw, 90px);
   text-align:center;
 }
 .hero .stack{ align-items:center; margin-inline:auto; }
@@ -207,10 +207,10 @@ p{ margin: 0; }
 
 /* Pinned scroll-reveal image: frame stays pinned while the image pans
    from its top portion to its bottom portion as the page scrolls past it. */
-.pinned-image-wrap{ position: relative; height: 110vh; }
+.pinned-image-wrap{ position: relative; height: 50vh; margin-bottom: clamp(24px, 4vw, 44px); }
 .pinned-image-sticky{
   position: sticky; top: 96px;
-  height: min(48vh, 465px);
+  height: min(32vh, 310px);
   border-radius: var(--radius-l);
   overflow: hidden;
   background: var(--c-grey);
@@ -221,8 +221,8 @@ p{ margin: 0; }
   object-fit:cover; will-change:transform;
 }
 @media (max-width: 900px){
-  .pinned-image-sticky{ top:76px; height:min(39vh,345px); }
-  .pinned-image-wrap{ height:90vh; }
+  .pinned-image-sticky{ top:76px; height:min(26vh,230px); }
+  .pinned-image-wrap{ height:41vh; }
 }
 @media (prefers-reduced-motion: reduce){
   .pinned-image-wrap{ height:auto; }
