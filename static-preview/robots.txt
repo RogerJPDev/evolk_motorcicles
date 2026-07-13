@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rogerjpdev.github.io/evolk_motorcicles/preview/sitemap.xml

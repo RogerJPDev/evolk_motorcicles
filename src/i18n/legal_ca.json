@@ -1,0 +1,76 @@
+{
+  "privacy": {
+    "title": "Política de Privacitat",
+    "updated": "Darrera actualització: juliol de 2026",
+    "intro": "A e-VOLK ens prenem seriosament la protecció de les teves dades personals. Aquesta política explica quines dades recollim, amb quina finalitat, la base legal que ho empara i quins drets tens, de conformitat amb el Reglament General de Protecció de Dades (RGPD) UE 2016/679 i la normativa nacional aplicable al teu país.",
+    "sections": [
+      {
+        "h": "1. Responsable del tractament",
+        "p": "e-VOLK (d'ara endavant, \"nosaltres\" o \"e-VOLK\") és el responsable del tractament de les dades personals recollides a través d'aquest lloc web. Per a qualsevol consulta relacionada amb la privacitat, pots escriure'ns mitjançant el formulari de contacte."
+      },
+      {
+        "h": "2. Quines dades recollim",
+        "p": "Recollim les dades que ens facilites voluntàriament mitjançant el formulari de contacte (correu electrònic, missatge i, opcionalment, telèfon), així com dades de navegació recollides de manera automàtica mitjançant cookies i tecnologies similars (Google Analytics, Google Tag Manager i Microsoft Clarity), previ el teu consentiment."
+      },
+      {
+        "h": "3. Finalitat del tractament",
+        "p": "Utilitzem les teves dades per respondre a les teves consultes, gestionar la teva inscripció a la llista d'espera, avaluar el teu interès a invertir en e-VOLK i analitzar l'ús del lloc web amb finalitats estadístiques i de millora contínua."
+      },
+      {
+        "h": "4. Base legal",
+        "p": "El tractament es basa en el teu consentiment explícit (formulari de contacte i cookies no essencials) i, si escau, en l'interès legítim d'e-VOLK per al funcionament tècnic bàsic del lloc web."
+      },
+      {
+        "h": "5. Conservació de les dades",
+        "p": "Conservarem les teves dades durant el temps necessari per complir la finalitat per a la qual van ser recollides i, posteriorment, durant els terminis de prescripció legal aplicables."
+      },
+      {
+        "h": "6. Destinataris i transferències",
+        "p": "Les teves dades s'emmagatzemen de manera xifrada en servidors d'Amazon Web Services (AWS). Determinades dades de navegació poden ser tractades per Google (Google Analytics i Google Tag Manager) i per Microsoft (Microsoft Clarity) d'acord amb les seves pròpies polítiques de privacitat. No venem ni cedim les teves dades personals a tercers amb finalitats comercials."
+      },
+      {
+        "h": "7. Els teus drets",
+        "p": "Pots exercir els teus drets d'accés, rectificació, supressió, oposició, limitació del tractament i portabilitat de les teves dades escrivint-nos mitjançant el formulari de contacte. També tens dret a presentar una reclamació davant l'autoritat de control de protecció de dades del teu país."
+      },
+      {
+        "h": "8. Seguretat",
+        "p": "Apliquem mesures tècniques i organitzatives adequades, inclòs el xifratge de la informació transmesa i emmagatzemada, per protegir les teves dades personals davant d'accessos no autoritzats, pèrdua o alteració."
+      },
+      {
+        "h": "9. Menors d'edat",
+        "p": "Aquest lloc web no està dirigit a menors d'edat. No recollim conscientment dades de menors de 16 anys."
+      },
+      {
+        "h": "10. Canvis en aquesta política",
+        "p": "Podem actualitzar aquesta política de privacitat periòdicament. Et recomanem revisar-la amb regularitat."
+      }
+    ]
+  },
+  "cookies": {
+    "title": "Política de Cookies",
+    "updated": "Darrera actualització: juliol de 2026",
+    "intro": "Aquest lloc web utilitza cookies pròpies i de tercers. Aquesta política explica què són les cookies, quines utilitzem i com les pots gestionar.",
+    "sections": [
+      {
+        "h": "1. Què són les cookies?",
+        "p": "Les cookies són petits arxius de text que s'emmagatzemen al teu dispositiu quan visites un lloc web. Permeten reconèixer el teu navegador i recordar certa informació sobre la teva visita."
+      },
+      {
+        "h": "2. Tipus de cookies que utilitzem",
+        "p": "Cookies necessàries: imprescindibles per al funcionament del lloc web, no requereixen consentiment. Cookies analítiques (Google Analytics i Microsoft Clarity): ens permeten entendre com els usuaris interactuen amb el lloc web, incloent-hi mapes de calor i gravacions de sessió anonimitzades. Cookies de màrqueting (Google Tag Manager): utilitzades per gestionar etiquetes de seguiment. Aquestes categories només s'activen després del teu consentiment exprés."
+      },
+      {
+        "h": "3. Gestió de les teves preferències",
+        "p": "Pots acceptar, rebutjar o configurar les teves preferències de cookies en qualsevol moment mitjançant el bàner de cookies o modificant la configuració del teu navegador."
+      },
+      {
+        "h": "4. Cookies de tercers",
+        "p": "Algunes cookies són gestionades per tercers, com Google i Microsoft, d'acord amb les seves pròpies polítiques de privacitat i cookies."
+      },
+      {
+        "h": "5. Més informació",
+        "p": "Per a més informació sobre el tractament de les teves dades, consulta la nostra Política de Privacitat."
+      }
+    ]
+  }
+}

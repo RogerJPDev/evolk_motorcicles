@@ -1,0 +1,192 @@
+{
+  "locale": "it",
+  "hreflang": "it-IT",
+  "lang_label": "Italiano",
+  "country_label": "Italia",
+  "dir": "ltr",
+  "site_name": "e-VOLK",
+  "meta": {
+    "home": {
+      "title": "e-VOLK | Moto elettrica urbana con ricarica rapida Type 2",
+      "description": "e-VOLK sviluppa moto elettriche urbane pensate per la ricarica pubblica rapida. Ricarica dal 20% all'80% in 15 minuti, senza batteria removibile. Alternativa pratica alla moto 50cc e 125cc."
+    },
+    "product": {
+      "title": "e-VOLK E-01 | Moto elettrica equivalente a 50cc e 125cc",
+      "description": "Scopri e-VOLK E-01: moto elettrica urbana con ricarica Type 2, motore mozzo a bassa manutenzione e struttura leggera. Mobilità elettrica pratica per la città."
+    },
+    "vision": {
+      "title": "La nostra visione | e-VOLK, mobilità elettrica senza frizioni",
+      "description": "e-VOLK nasce per eliminare l'ansia da ricarica della moto elettrica. Scopri perché crediamo che la mobilità elettrica debba essere pratica quanto quella a benzina."
+    },
+    "faq": {
+      "title": "Domande frequenti | e-VOLK moto elettrica",
+      "description": "Rispondiamo alle tue domande su ricarica Type 2, ricarica pubblica, ricarica a casa e la moto elettrica e-VOLK senza batteria removibile."
+    },
+    "contact": {
+      "title": "Contatti | Unisciti alla lista d'attesa di e-VOLK",
+      "description": "Iscriviti per ricevere le novità di e-VOLK o informati sulle opportunità di investimento nella mobilità elettrica urbana."
+    },
+    "privacy": {
+      "title": "Informativa sulla Privacy | e-VOLK",
+      "description": "Informativa sulla privacy e protezione dei dati di e-VOLK, conforme al GDPR."
+    },
+    "cookies": {
+      "title": "Cookie Policy | e-VOLK",
+      "description": "Informazioni sull'uso dei cookie nel sito web di e-VOLK."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "product": "Prodotto",
+    "vision": "Visione",
+    "faq": "Domande frequenti",
+    "contact": "Contatti",
+    "cta": "Unisciti alla lista d'attesa"
+  },
+  "footer": {
+    "tagline": "Ricarica in minuti, non in ore.",
+    "nav_title": "Navigazione",
+    "legal_title": "Legale",
+    "privacy": "Informativa sulla Privacy",
+    "cookies": "Cookie Policy",
+    "contact": "Contatti",
+    "language_title": "Lingua e paese",
+    "rights": "Tutti i diritti riservati.",
+    "under_development": "e-VOLK E-01 è attualmente in fase di sviluppo."
+  },
+  "cookie_banner": {
+    "text": "Utilizziamo cookie propri e di terze parti per analizzare la navigazione e migliorare la tua esperienza. Puoi accettare tutti i cookie, rifiutarli o configurare le tue preferenze.",
+    "accept": "Accetta tutti",
+    "reject": "Rifiuta",
+    "customize": "Configura",
+    "save_preferences": "Salva preferenze",
+    "analytics_label": "Cookie analitici (Google Analytics)",
+    "marketing_label": "Cookie di marketing (Google Tag Manager)",
+    "necessary_label": "Cookie necessari (sempre attivi)",
+    "policy_link": "Maggiori informazioni nella nostra Cookie Policy"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Mobilità elettrica urbana",
+      "title": "Ricarica in minuti, non in ore.",
+      "subtitle": "Una nuova generazione di moto elettriche progettata attorno a un'idea semplice: la ricarica dovrebbe richiedere minuti, non ore. Semplice. Robusta. Accessibile. Pensata per la mobilità urbana quotidiana.",
+      "cta_primary": "Scopri il concept",
+      "cta_secondary": "Unisciti alla lista d'attesa"
+    },
+    "section2": {
+      "eyebrow": "Infrastruttura di ricarica",
+      "title": "La rete di ricarica esiste già.",
+      "text": "In tutta Europa, migliaia di punti di ricarica pubblica sono già disponibili in città, centri commerciali, luoghi di lavoro e parcheggi pubblici.",
+      "text2": "In molte grandi città, i punti di ricarica pubblica superano già in numero le tradizionali stazioni di servizio.",
+      "map_title": "Trova i punti di ricarica pubblica vicino a te",
+      "map_text": "Esplora la rete di ricarica Type 2 disponibile nella tua città attraverso le mappe dell'infrastruttura pubblica."
+    },
+    "section3": {
+      "eyebrow": "Il nostro approccio",
+      "title": "Progettata per eliminare l'ultima barriera.",
+      "intro": "e-VOLK è in sviluppo attorno a un'idea semplice:",
+      "bullets": [
+        "Le moto elettriche dovrebbero essere pratiche e semplici quanto quelle a benzina.",
+        "Grazie a un sistema di ricarica di bordo ad alta potenza e alla rete di ricarica Type 2 già esistente, e-VOLK riduce i tempi di ricarica da ore a minuti.",
+        "Nessuna sostituzione della batteria.",
+        "Nessuna infrastruttura speciale.",
+        "Nessuna routine di ricarica complicata."
+      ],
+      "closing": "Basta collegarsi e continuare a muoversi."
+    }
+  },
+  "product": {
+    "hero_title": "Scopri e-VOLK E-01",
+    "hero_subtitle": "Progettata attorno a un'idea semplice: ricarica in minuti, non in ore.",
+    "specs_title": "Caratteristiche tecniche",
+    "specs": [
+      "Ricarica dal 20% all'80% in 15 minuti",
+      "Ricarica pubblica Type 2",
+      "Autonomia pratica per uso urbano",
+      "Motore mozzo a bassa manutenzione",
+      "Struttura leggera",
+      "Costi di proprietà accessibili"
+    ],
+    "gallery_title": "Dettaglio del design",
+    "development_notice": "e-VOLK E-01 è attualmente in fase di sviluppo.",
+    "cta_invest": "Vuoi investire?"
+  },
+  "vision": {
+    "hero_title": "La nostra visione",
+    "sections": [
+      {
+        "title": "Perché siamo partiti",
+        "text": "Le moto elettriche esistono da anni, ma la loro adozione di massa resta limitata. Il problema non è più la propulsione elettrica. Il problema è l'usabilità. Tempi di ricarica lunghi, ansia da ricarica e scomodità quotidiana continuano a impedire che la moto elettrica diventi la scelta naturale per la mobilità urbana."
+      },
+      {
+        "title": "L'opportunità",
+        "text": "L'infrastruttura di ricarica pubblica continua a crescere in tutta Europa. In molte città, i punti di ricarica già eguagliano o superano la rete tradizionale di stazioni di servizio. L'infrastruttura sta arrivando. L'esperienza d'uso, ancora no."
+      },
+      {
+        "title": "La visione",
+        "text": "Crediamo che la moto elettrica debba essere pratica, accessibile ed efficace quanto una moto convenzionale. La mobilità elettrica non dovrebbe richiedere compromessi nello stile di vita. Dovrebbe inserirsi naturalmente nella vita quotidiana."
+      },
+      {
+        "title": "L'ispirazione",
+        "text": "Le generazioni precedenti hanno trovato libertà in veicoli semplici, accessibili e affidabili. Questi veicoli sono diventati icone perché risolvevano reali esigenze di mobilità. e-VOLK vuole portare lo stesso spirito di libertà, semplicità e accessibilità nell'era elettrica."
+      },
+      {
+        "title": "Guardando avanti",
+        "text": "Stiamo sviluppando una nuova generazione di moto elettriche progettata attorno a un'idea semplice: ricarica in minuti, non in ore."
+      }
+    ]
+  },
+  "faq": {
+    "hero_title": "Domande frequenti",
+    "questions": [
+      {
+        "q": "Quanto velocemente si ricarica?",
+        "a": "e-VOLK è in sviluppo con un obiettivo semplice: la ricarica deve inserirsi naturalmente nella vita quotidiana. Invece di pianificare la giornata attorno alla ricarica, la ricarica si adatta alle tue attività quotidiane, permettendoti di proseguire il viaggio con un'interruzione minima."
+      },
+      {
+        "q": "Cos'è il connettore Type 2?",
+        "a": "Type 2 è lo standard di ricarica pubblica più diffuso in Europa. Si trova comunemente presso stazioni di ricarica pubblica, luoghi di lavoro, centri commerciali e parcheggi, rendendo la ricarica semplice e familiare ovunque tu vada."
+      },
+      {
+        "q": "Ho bisogno di un garage?",
+        "a": "No. e-VOLK è progettata attorno all'infrastruttura di ricarica pubblica, permettendo ai motociclisti di beneficiare della crescente rete di punti di ricarica disponibile nelle città europee. Un parcheggio privato può essere comodo, ma non dovrebbe essere un requisito per la mobilità elettrica."
+      },
+      {
+        "q": "Posso ricaricare a casa?",
+        "a": "Sì. e-VOLK è progettata per supportare gli scenari di ricarica quotidiani, sia a casa, al lavoro o tramite infrastruttura di ricarica pubblica."
+      },
+      {
+        "q": "Devo rimuovere la batteria per ricaricare?",
+        "a": "No. e-VOLK è progettata attorno a una ricarica comoda attraverso l'infrastruttura esistente, eliminando la necessità di rimuovere o sostituire la batteria."
+      },
+      {
+        "q": "In cosa e-VOLK è diversa dalle altre moto elettriche?",
+        "a": "La maggior parte delle moto elettriche si concentra sull'elettrificazione. e-VOLK si concentra sull'usabilità. Il nostro obiettivo è rendere la mobilità elettrica pratica ed efficace quanto la moto convenzionale."
+      },
+      {
+        "q": "e-VOLK è disponibile oggi?",
+        "a": "e-VOLK è attualmente in fase di sviluppo. L'architettura del veicolo, la validazione di mercato e il coinvolgimento dei fornitori sono in corso, con lo sviluppo del prototipo come prossima tappa. Unisciti alla lista d'attesa per seguire il progetto e ricevere aggiornamenti."
+      },
+      {
+        "q": "A chi è rivolta e-VOLK?",
+        "a": "e-VOLK è pensata per chi cerca un modo pratico, accessibile e semplice per muoversi in città. Non è richiesta alcuna esperienza pregressa con le moto per apprezzare la mobilità elettrica."
+      }
+    ]
+  },
+  "contact": {
+    "hero_title": "Unisciti al futuro della mobilità elettrica pratica.",
+    "option1": "Tienimi aggiornato",
+    "option2": "Voglio investire",
+    "option_label": "Seleziona un'opzione",
+    "field_email": "Indirizzo email",
+    "field_message": "Messaggio / commenti aggiuntivi",
+    "field_phone": "Telefono (facoltativo)",
+    "consent_label": "Ho letto e accetto l'Informativa sulla Privacy e il trattamento dei miei dati conforme al GDPR.",
+    "captcha_label": "Verifica di sicurezza",
+    "submit": "Invia",
+    "success_title": "Grazie.",
+    "success_text": "Abbiamo ricevuto il tuo messaggio e ti contatteremo quando sarà rilevante.",
+    "error_text": "Impossibile inviare il modulo. Controlla i campi obbligatori e riprova.",
+    "required_note": "I campi contrassegnati con * sono obbligatori."
+  }
+}
