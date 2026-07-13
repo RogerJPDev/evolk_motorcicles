@@ -207,7 +207,7 @@ p{ margin: 0; }
 
 /* Pinned scroll-reveal image: frame stays pinned while the image pans
    from its top portion to its bottom portion as the page scrolls past it. */
-.pinned-image-wrap{ position: relative; height: 200vh; }
+.pinned-image-wrap{ position: relative; height: 110vh; }
 .pinned-image-sticky{
   position: sticky; top: 96px;
   height: min(48vh, 465px);
@@ -222,7 +222,7 @@ p{ margin: 0; }
 }
 @media (max-width: 900px){
   .pinned-image-sticky{ top:76px; height:min(39vh,345px); }
-  .pinned-image-wrap{ height:170vh; }
+  .pinned-image-wrap{ height:90vh; }
 }
 @media (prefers-reduced-motion: reduce){
   .pinned-image-wrap{ height:auto; }
