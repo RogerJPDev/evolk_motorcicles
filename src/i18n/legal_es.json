@@ -4,16 +4,46 @@
     "updated": "Última actualización: julio de 2026",
     "intro": "En e-VOLK nos tomamos en serio la protección de tus datos personales. Esta política explica qué datos recogemos, con qué finalidad, la base legal que lo ampara y qué derechos tienes, de conformidad con el Reglamento General de Protección de Datos (RGPD) UE 2016/679 y la normativa nacional aplicable en tu país.",
     "sections": [
-      {"h": "1. Responsable del tratamiento", "p": "e-VOLK (en adelante, \"nosotros\" o \"e-VOLK\") es el responsable del tratamiento de los datos personales recogidos a través de este sitio web. Para cualquier consulta relacionada con privacidad, puedes escribirnos a través del formulario de contacto."},
-      {"h": "2. Qué datos recogemos", "p": "Recogemos los datos que nos facilitas voluntariamente a través del formulario de contacto (correo electrónico, mensaje y, opcionalmente, teléfono), así como datos de navegación recogidos de forma automática mediante cookies y tecnologías similares (Google Analytics y Google Tag Manager), previo tu consentimiento."},
-      {"h": "3. Finalidad del tratamiento", "p": "Utilizamos tus datos para responder a tus consultas, gestionar tu inscripción en la lista de espera, evaluar tu interés en invertir en e-VOLK y analizar el uso del sitio web con fines estadísticos y de mejora continua."},
-      {"h": "4. Base legal", "p": "El tratamiento se basa en tu consentimiento explícito (formulario de contacto y cookies no esenciales) y, en su caso, en el interés legítimo de e-VOLK para el funcionamiento técnico básico del sitio web."},
-      {"h": "5. Conservación de los datos", "p": "Conservaremos tus datos durante el tiempo necesario para cumplir con la finalidad para la que fueron recogidos y, posteriormente, durante los plazos de prescripción legal aplicables."},
-      {"h": "6. Destinatarios y transferencias", "p": "Tus datos se almacenan de forma cifrada en servidores de Amazon Web Services (AWS). Determinados datos de navegación pueden ser tratados por Google (Google Analytics y Google Tag Manager) conforme a sus propias políticas de privacidad. No vendemos ni cedemos tus datos personales a terceros con fines comerciales."},
-      {"h": "7. Tus derechos", "p": "Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad de tus datos escribiéndonos a través del formulario de contacto. También tienes derecho a presentar una reclamación ante la autoridad de control de protección de datos de tu país."},
-      {"h": "8. Seguridad", "p": "Aplicamos medidas técnicas y organizativas adecuadas, incluido el cifrado de la información transmitida y almacenada, para proteger tus datos personales frente a accesos no autorizados, pérdida o alteración."},
-      {"h": "9. Menores de edad", "p": "Este sitio web no está dirigido a menores de edad. No recogemos conscientemente datos de menores de 16 años."},
-      {"h": "10. Cambios en esta política", "p": "Podemos actualizar esta política de privacidad periódicamente. Te recomendamos revisarla con regularidad."}
+      {
+        "h": "1. Responsable del tratamiento",
+        "p": "e-VOLK (en adelante, \"nosotros\" o \"e-VOLK\") es el responsable del tratamiento de los datos personales recogidos a través de este sitio web. Para cualquier consulta relacionada con privacidad, puedes escribirnos a través del formulario de contacto."
+      },
+      {
+        "h": "2. Qué datos recogemos",
+        "p": "Recogemos los datos que nos facilitas voluntariamente a través del formulario de contacto (correo electrónico, mensaje y, opcionalmente, teléfono), así como datos de navegación recogidos de forma automática mediante cookies y tecnologías similares (Google Analytics, Google Tag Manager y Microsoft Clarity), previo tu consentimiento."
+      },
+      {
+        "h": "3. Finalidad del tratamiento",
+        "p": "Utilizamos tus datos para responder a tus consultas, gestionar tu inscripción en la lista de espera, evaluar tu interés en invertir en e-VOLK y analizar el uso del sitio web con fines estadísticos y de mejora continua."
+      },
+      {
+        "h": "4. Base legal",
+        "p": "El tratamiento se basa en tu consentimiento explícito (formulario de contacto y cookies no esenciales) y, en su caso, en el interés legítimo de e-VOLK para el funcionamiento técnico básico del sitio web."
+      },
+      {
+        "h": "5. Conservación de los datos",
+        "p": "Conservaremos tus datos durante el tiempo necesario para cumplir con la finalidad para la que fueron recogidos y, posteriormente, durante los plazos de prescripción legal aplicables."
+      },
+      {
+        "h": "6. Destinatarios y transferencias",
+        "p": "Tus datos se almacenan de forma cifrada en servidores de Amazon Web Services (AWS). Determinados datos de navegación pueden ser tratados por Google (Google Analytics y Google Tag Manager) y por Microsoft (Microsoft Clarity) conforme a sus propias políticas de privacidad. No vendemos ni cedemos tus datos personales a terceros con fines comerciales."
+      },
+      {
+        "h": "7. Tus derechos",
+        "p": "Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad de tus datos escribiéndonos a través del formulario de contacto. También tienes derecho a presentar una reclamación ante la autoridad de control de protección de datos de tu país."
+      },
+      {
+        "h": "8. Seguridad",
+        "p": "Aplicamos medidas técnicas y organizativas adecuadas, incluido el cifrado de la información transmitida y almacenada, para proteger tus datos personales frente a accesos no autorizados, pérdida o alteración."
+      },
+      {
+        "h": "9. Menores de edad",
+        "p": "Este sitio web no está dirigido a menores de edad. No recogemos conscientemente datos de menores de 16 años."
+      },
+      {
+        "h": "10. Cambios en esta política",
+        "p": "Podemos actualizar esta política de privacidad periódicamente. Te recomendamos revisarla con regularidad."
+      }
     ]
   },
   "cookies": {
@@ -21,11 +51,26 @@
     "updated": "Última actualización: julio de 2026",
     "intro": "Este sitio web utiliza cookies propias y de terceros. Esta política explica qué son las cookies, cuáles utilizamos y cómo puedes gestionarlas.",
     "sections": [
-      {"h": "1. ¿Qué son las cookies?", "p": "Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web. Permiten reconocer tu navegador y recordar cierta información sobre tu visita."},
-      {"h": "2. Tipos de cookies que utilizamos", "p": "Cookies necesarias: imprescindibles para el funcionamiento del sitio web, no requieren consentimiento. Cookies analíticas (Google Analytics): nos permiten entender cómo los usuarios interactúan con el sitio web. Cookies de marketing (Google Tag Manager): utilizadas para gestionar etiquetas de seguimiento. Estas últimas dos categorías solo se activan tras tu consentimiento expreso."},
-      {"h": "3. Gestión de tus preferencias", "p": "Puedes aceptar, rechazar o configurar tus preferencias de cookies en cualquier momento a través del banner de cookies o modificando la configuración de tu navegador."},
-      {"h": "4. Cookies de terceros", "p": "Algunas cookies son gestionadas por terceros, como Google, conforme a sus propias políticas de privacidad y cookies."},
-      {"h": "5. Más información", "p": "Para más información sobre el tratamiento de tus datos, consulta nuestra Política de Privacidad."}
+      {
+        "h": "1. ¿Qué son las cookies?",
+        "p": "Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web. Permiten reconocer tu navegador y recordar cierta información sobre tu visita."
+      },
+      {
+        "h": "2. Tipos de cookies que utilizamos",
+        "p": "Cookies necesarias: imprescindibles para el funcionamiento del sitio web, no requieren consentimiento. Cookies analíticas (Google Analytics y Microsoft Clarity): nos permiten entender cómo los usuarios interactúan con el sitio web, incluyendo mapas de calor y grabaciones de sesión anonimizadas. Cookies de marketing (Google Tag Manager): utilizadas para gestionar etiquetas de seguimiento. Estas categorías solo se activan tras tu consentimiento expreso."
+      },
+      {
+        "h": "3. Gestión de tus preferencias",
+        "p": "Puedes aceptar, rechazar o configurar tus preferencias de cookies en cualquier momento a través del banner de cookies o modificando la configuración de tu navegador."
+      },
+      {
+        "h": "4. Cookies de terceros",
+        "p": "Algunas cookies son gestionadas por terceros, como Google y Microsoft, conforme a sus propias políticas de privacidad y cookies."
+      },
+      {
+        "h": "5. Más información",
+        "p": "Para más información sobre el tratamiento de tus datos, consulta nuestra Política de Privacidad."
+      }
     ]
   }
 }

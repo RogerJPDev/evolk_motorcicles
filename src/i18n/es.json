@@ -50,7 +50,7 @@
     "privacy": "Política de Privacidad",
     "cookies": "Política de Cookies",
     "contact": "Contacto",
-    "language_title": "Idioma y país",
+    "language_title": "Idioma",
     "rights": "Todos los derechos reservados.",
     "under_development": "e-VOLK E-01 se encuentra actualmente en fase de desarrollo."
   },
@@ -69,17 +69,17 @@
     "hero": {
       "eyebrow": "Movilidad eléctrica urbana",
       "title": "Carga en minutos, no en horas.",
-      "subtitle": "Una nueva generación de motos eléctricas diseñada alrededor de una idea simple: cargar debería tardar minutos, no horas. Simple. Robusta. Asequible. Pensada para la movilidad urbana diaria.",
+      "subtitle": "Una nueva generación de motos eléctricas diseñada alrededor de una idea simple:<br><br>cargar debería tardar minutos, no horas. Simple. Robusta. Asequible. Pensada para la movilidad urbana diaria.",
       "cta_primary": "Descubre el concepto",
       "cta_secondary": "Únete a la lista de espera"
     },
     "section2": {
       "eyebrow": "Infraestructura de carga",
       "title": "La red de carga ya existe.",
-      "text": "En toda Europa, miles de puntos de carga pública ya están disponibles en ciudades, centros comerciales, lugares de trabajo y aparcamientos públicos.",
-      "text2": "En muchas grandes ciudades, los puntos de carga pública ya superan en número a las gasolineras tradicionales.",
+      "text": "Más de 1 millón de puntos de carga públicos ya están disponibles en Europa.",
+      "text2": "La infraestructura ya existe. e-VOLK está diseñada para aprovecharla.",
       "map_title": "Encuentra puntos de carga pública cerca de ti",
-      "map_text": "Explora la red de carga Type 2 disponible en tu ciudad a través de los mapas de infraestructura pública."
+      "map_text": "Explora la red de carga disponible en tu ciudad a través de los mapas de infraestructura pública."
     },
     "section3": {
       "eyebrow": "Nuestro enfoque",
@@ -87,25 +87,30 @@
       "intro": "e-VOLK se está desarrollando en torno a una idea simple:",
       "bullets": [
         "Las motos eléctricas deberían ser tan prácticas y sencillas como las de gasolina.",
-        "Con un sistema de carga embarcada de alta potencia y la red de carga Type 2 ya existente, e-VOLK reduce el tiempo de carga de horas a minutos.",
-        "Sin cambio de batería.",
-        "Sin infraestructura especial.",
-        "Sin rutinas de carga complicadas."
+        "Diseñada para cargar en los cargadores públicos ya existentes, reduciendo el tiempo de espera de horas a minutos.",
+        "Sin tener que planificar cada carga.",
+        "Sin necesidad de un cargador privado.",
+        "Sin cambiar tus hábitos."
       ],
       "closing": "Solo conectar y seguir circulando."
-    }
+    },
+    "usp": [
+      "Compatible con cargadores públicos",
+      "20-80% en 15 minutos",
+      "Carga en miles de puntos públicos en Europa"
+    ]
   },
   "product": {
-    "hero_title": "Conoce el e-VOLK E-01",
+    "hero_title": "Conoce la e-VOLK E-01",
     "hero_subtitle": "Diseñada alrededor de una idea simple: carga en minutos, no en horas.",
     "specs_title": "Características técnicas",
     "specs": [
       "Carga del 20% al 80% en 15 minutos",
-      "Carga pública Type 2",
-      "Autonomía práctica para uso urbano",
-      "Motor buje de bajo mantenimiento",
+      "Compatible con cargadores públicos",
+      "Autonomía pensada para el día a día",
+      "Motor HUB de bajo mantenimiento",
       "Arquitectura ligera",
-      "Propiedad asequible"
+      "Pensada para durar"
     ],
     "gallery_title": "Detalle de diseño",
     "development_notice": "El e-VOLK E-01 se encuentra actualmente en fase de desarrollo.",
@@ -116,11 +121,18 @@
     "sections": [
       {
         "title": "Por qué empezamos",
-        "text": "Las motos eléctricas existen desde hace años, pero su adopción masiva sigue siendo limitada. El problema ya no es la propulsión eléctrica. El problema es la usabilidad. Los tiempos de carga largos, la ansiedad de carga y la incomodidad del día a día siguen impidiendo que la moto eléctrica se convierta en la opción natural para la movilidad urbana."
+        "lines": [
+          "Las motos eléctricas ya existen.",
+          "El problema no es la moto.",
+          "Es el tiempo de carga.",
+          "Es la necesidad de planificar.",
+          "Es tener que cambiar tus hábitos.",
+          "Nosotros creemos que esto no debería ser así."
+        ]
       },
       {
         "title": "La oportunidad",
-        "text": "La infraestructura de carga pública sigue creciendo en toda Europa. En muchas ciudades, los puntos de carga ya igualan o superan a la red tradicional de gasolineras. La infraestructura está llegando. La experiencia de usuario, todavía no."
+        "text": "<strong>Más de 1 millón de puntos de carga públicos ya están disponibles en Europa.</strong><br>La infraestructura ya existe.<br>El siguiente paso es aprovecharla de una manera más práctica."
       },
       {
         "title": "La visión",
@@ -128,7 +140,7 @@
       },
       {
         "title": "La inspiración",
-        "text": "Generaciones anteriores encontraron libertad en vehículos simples, asequibles y fiables. Esos vehículos se convirtieron en iconos porque resolvían necesidades reales de movilidad. e-VOLK quiere traer ese mismo espíritu de libertad, sencillez y accesibilidad a la era eléctrica."
+        "text": "Generaciones enteras descubrieron la libertad sobre dos ruedas.<br>Vehículos sencillos.<br>Robustos.<br>Asequibles.<br>No queremos copiar aquellas motos.<br>Queremos recuperar lo que representaban."
       },
       {
         "title": "Mirando hacia delante",
@@ -141,19 +153,19 @@
     "questions": [
       {
         "q": "¿Qué tan rápido carga?",
-        "a": "e-VOLK se está desarrollando con un objetivo simple: la carga debe encajar de forma natural en el día a día. En lugar de planificar tu jornada en torno a la carga, la carga se adapta a tus actividades diarias, permitiéndote continuar tu trayecto con una interrupción mínima."
+        "a": "e-VOLK se está desarrollando con un objetivo muy claro: que la carga se adapte a tu día, y no al revés.<br>Nuestra visión es reducir el tiempo de carga de horas a minutos, para que puedas continuar tu rutina con una interrupción mínima."
       },
       {
         "q": "¿Qué es el conector Type 2?",
-        "a": "Type 2 es el estándar de carga pública más extendido en Europa. Se encuentra habitualmente en estaciones de carga pública, lugares de trabajo, centros comerciales y aparcamientos, lo que hace que cargar sea sencillo y familiar allá donde vayas."
+        "a": "El <strong>Type 2</strong> es el conector estándar de la mayoría de los puntos de carga públicos en Europa.<br>Esto significa que e-VOLK está diseñada para aprovechar la infraestructura de carga que ya existe, facilitando la carga allá donde la necesites."
       },
       {
         "q": "¿Necesito un garaje?",
-        "a": "No. e-VOLK está diseñada en torno a la infraestructura de carga pública, permitiendo a los usuarios beneficiarse de la creciente red de puntos de carga disponible en las ciudades europeas. Un aparcamiento privado puede ser conveniente, pero no debería ser un requisito para la movilidad eléctrica."
+        "a": "No.<br>e-VOLK está diseñada para aprovechar la red de cargadores públicos que ya existe en las ciudades europeas.<br>Disponer de un aparcamiento privado puede ser cómodo, pero creemos que no debería ser un requisito para disfrutar de la movilidad eléctrica."
       },
       {
         "q": "¿Puedo cargar en casa?",
-        "a": "Sí. e-VOLK está diseñada para adaptarse a los escenarios de carga habituales, ya sea en casa, en el trabajo o mediante infraestructura de carga pública."
+        "a": "Sí.<br>e-VOLK es compatible tanto con la carga doméstica como con la red de cargadores públicos.<br>El objetivo es que puedas cargar la moto donde te resulte más práctico, adaptándose a tu día a día y no al revés."
       },
       {
         "q": "¿Tengo que extraer la batería para cargar?",
@@ -161,15 +173,7 @@
       },
       {
         "q": "¿En qué se diferencia e-VOLK de otras motos eléctricas?",
-        "a": "La mayoría de las motos eléctricas se centran en la electrificación. e-VOLK se centra en la usabilidad. Nuestro objetivo es hacer que la movilidad eléctrica sea tan práctica y sencilla como la moto convencional."
-      },
-      {
-        "q": "¿Está disponible e-VOLK hoy?",
-        "a": "e-VOLK se encuentra actualmente en fase de desarrollo. La arquitectura del vehículo, la validación de mercado y el trabajo con proveedores están en marcha, con el desarrollo del prototipo como siguiente hito. Únete a la lista de espera para seguir el proyecto y recibir novedades."
-      },
-      {
-        "q": "¿Para quién está pensada e-VOLK?",
-        "a": "e-VOLK está pensada para personas que buscan una forma práctica, asequible y sencilla de moverse por la ciudad. No se requiere experiencia previa con motocicletas para disfrutar de la movilidad eléctrica."
+        "a": "e-VOLK no solo electrifica una moto; replantea la forma de utilizarla.<br>Está desarrollada para que la carga se integre de manera natural en tu día a día, aprovechando la infraestructura pública existente y reduciendo el tiempo de espera de horas a minutos.<br>Nuestro objetivo es que la movilidad eléctrica sea tan práctica, sencilla y accesible como cualquier moto convencional."
       }
     ]
   },
@@ -182,11 +186,11 @@
     "field_message": "Mensaje / comentarios adicionales",
     "field_phone": "Teléfono (opcional)",
     "consent_label": "He leído y acepto la Política de Privacidad y el tratamiento de mis datos conforme al RGPD.",
-    "captcha_label": "Verificación de seguridad",
     "submit": "Enviar",
-    "success_title": "Gracias.",
-    "success_text": "Hemos recibido tu mensaje y nos pondremos en contacto contigo cuando sea relevante.",
+    "success_title": "Anotado en la lista.",
+    "success_text": "Gracias por registrarte, nos pondremos en contacto contigo cuando haya novedades.",
     "error_text": "No se ha podido enviar el formulario. Comprueba los campos obligatorios e inténtalo de nuevo.",
-    "required_note": "Los campos marcados con * son obligatorios."
+    "required_note": "Los campos marcados con * son obligatorios.",
+    "honeypot_label": "Deja este campo vacío"
   }
 }
