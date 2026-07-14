@@ -219,7 +219,7 @@ p{ margin: 0; }
 .pinned-image-track img{
   position:absolute; top:0; left:0; width:100%; height:230%;
   object-fit:cover; will-change:transform;
-  transition: transform .12s linear;
+  transition: transform .5s linear;
 }
 @media (max-width: 900px){
   .pinned-image-sticky{ top:76px; height:min(26vh,230px); }
