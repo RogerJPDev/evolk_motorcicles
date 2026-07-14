@@ -59,26 +59,44 @@
          <div class="pinned-image-track"><img ...></div>
        </div>
      </div>
-     Once the image scrolls into view, it pans from its top portion to its
-     bottom portion automatically over ~2.5s (CSS transition), independent
-     of how much or how fast the user then scrolls. Plays once. */
+     Pans between its top portion and its bottom portion, animated over
+     ~2.5s (CSS transition). Reversible: scrolling down past a small
+     threshold reveals the bottom crop; scrolling back up past that same
+     threshold returns to the top crop. Nothing moves on page load until
+     the visitor actually scrolls. */
   var pinnedWraps = document.querySelectorAll("[data-pinned-image]");
-  if (pinnedWraps.length && "IntersectionObserver" in window) {
-    var pinIo = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var wrap = entry.target;
-        var sticky = wrap.querySelector(".pinned-image-sticky");
-        var img = wrap.querySelector(".pinned-image-track img");
-        if (!sticky || !img) { pinIo.unobserve(wrap); return; }
-        var maxTranslate = img.offsetHeight - sticky.offsetHeight;
-        if (maxTranslate > 0) {
-          img.style.transform = "translateY(-" + maxTranslate + "px)";
+  if (pinnedWraps.length) {
+    var PIN_SCROLL_THRESHOLD = 30;
+    var pinRevealedState = new WeakMap();
+
+    function setPinRevealed(wrap, revealed) {
+      var sticky = wrap.querySelector(".pinned-image-sticky");
+      var img = wrap.querySelector(".pinned-image-track img");
+      if (!sticky || !img) return;
+      var maxTranslate = img.offsetHeight - sticky.offsetHeight;
+      img.style.transform = revealed && maxTranslate > 0
+        ? "translateY(-" + maxTranslate + "px)"
+        : "translateY(0px)";
+      pinRevealedState.set(wrap, revealed);
+    }
+
+    pinnedWraps.forEach(function (wrap) { pinRevealedState.set(wrap, false); });
+
+    var pinTicking = false;
+    function updatePinStates() {
+      pinnedWraps.forEach(function (wrap) {
+        var rect = wrap.getBoundingClientRect();
+        var revealed = (-rect.top) > PIN_SCROLL_THRESHOLD;
+        if (pinRevealedState.get(wrap) !== revealed) {
+          setPinRevealed(wrap, revealed);
         }
-        pinIo.unobserve(wrap);
       });
-    }, { threshold: 0.3 });
-    pinnedWraps.forEach(function (wrap) { pinIo.observe(wrap); });
+      pinTicking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!pinTicking) { window.requestAnimationFrame(updatePinStates); pinTicking = true; }
+    }, { passive: true });
+    window.addEventListener("resize", updatePinStates);
   }
 
   /* ---------- Cookie consent (GDPR) ---------- */
