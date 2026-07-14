@@ -188,7 +188,7 @@
     "consent_label": "He llegit i accepto la Política de Privacitat i el tractament de les meves dades d'acord amb el RGPD.",
     "submit": "Enviar",
     "success_title": "Gràcies.",
-    "success_text": "Hem rebut el teu missatge i ens posarem en contacte amb tu quan sigui rellevant.",
+    "success_text": "Gràcies per registrar-te, ens posarem en contacte amb tu quan hi hagi novetats!",
     "error_text": "No s'ha pogut enviar el formulari. Comprova els camps obligatoris i torna-ho a provar.",
     "required_note": "Els camps marcats amb * són obligatoris.",
     "honeypot_label": "Deixa aquest camp buit"

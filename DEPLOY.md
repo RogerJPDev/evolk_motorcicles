@@ -38,27 +38,6 @@ git push -u origin main
 
 No DNS setup needed — this is the default `github.io` subdomain + project path.
 
-## Comparing versions (previous vs. current)
-
-There's a frozen static snapshot of the previous hero-image behavior committed
-in `static-preview/`. The workflow copies it into `build/preview/` on every
-deploy, so both versions are live simultaneously, side by side:
-
-- **Current**: https://rogerjpdev.github.io/evolk_motorcicles/ca/index.html
-- **Previous** (for comparison): https://rogerjpdev.github.io/evolk_motorcicles/preview/ca/index.html
-
-The preview snapshot is fully self-contained (its own CSS/JS/assets under
-`/preview/assets/...`), so it won't be affected by future changes to the main
-site. When you no longer need the comparison, just delete the `static-preview/`
-folder and remove the "Add previous-version preview snapshot" step from
-`.github/workflows/deploy.yml`.
-
-To freeze a *new* snapshot later (e.g. before another big change), run
-`python3 build.py` with `BASE_PATH`/`BASE_URL` temporarily pointed at
-`/evolk_motorcicles/preview` (see git history for the exact pattern used to
-generate this one), copy the output into `static-preview/`, then rebuild
-normally for the main site.
-
 ## If you switch to a custom domain later
 
 1. Set `BASE_URL` to the new domain and `BASE_PATH = ""` (empty string) at the

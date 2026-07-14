@@ -52,51 +52,45 @@
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  /* ---------- Time-based reveal images ----------
+  /* ---------- Pinned scroll-reveal images ----------
      Structure expected:
      <div class="pinned-image-wrap" data-pinned-image>
        <div class="pinned-image-sticky">
          <div class="pinned-image-track"><img ...></div>
        </div>
      </div>
-     Pans between its top portion and its bottom portion, animated over
-     ~2.5s (CSS transition). Reversible: scrolling down past a small
-     threshold reveals the bottom crop; scrolling back up past that same
-     threshold returns to the top crop. Nothing moves on page load until
-     the visitor actually scrolls. */
+     The wrap is taller than the viewport; while it scrolls past, the image
+     pans from its top portion to its bottom portion inside the pinned frame.
+     (Promoted from the preview build.) */
   var pinnedWraps = document.querySelectorAll("[data-pinned-image]");
   if (pinnedWraps.length) {
-    var PIN_SCROLL_THRESHOLD = 30;
-    var pinRevealedState = new WeakMap();
-
-    function setPinRevealed(wrap, revealed) {
-      var sticky = wrap.querySelector(".pinned-image-sticky");
-      var img = wrap.querySelector(".pinned-image-track img");
-      if (!sticky || !img) return;
-      var maxTranslate = img.offsetHeight - sticky.offsetHeight;
-      img.style.transform = revealed && maxTranslate > 0
-        ? "translateY(-" + maxTranslate + "px)"
-        : "translateY(0px)";
-      pinRevealedState.set(wrap, revealed);
-    }
-
-    pinnedWraps.forEach(function (wrap) { pinRevealedState.set(wrap, false); });
+    var pinnedItems = Array.prototype.map.call(pinnedWraps, function (wrap) {
+      return {
+        wrap: wrap,
+        sticky: wrap.querySelector(".pinned-image-sticky"),
+        img: wrap.querySelector(".pinned-image-track img")
+      };
+    }).filter(function (it) { return it.sticky && it.img; });
 
     var pinTicking = false;
-    function updatePinStates() {
-      pinnedWraps.forEach(function (wrap) {
-        var rect = wrap.getBoundingClientRect();
-        var revealed = (-rect.top) > PIN_SCROLL_THRESHOLD;
-        if (pinRevealedState.get(wrap) !== revealed) {
-          setPinRevealed(wrap, revealed);
-        }
+    function updatePinned() {
+      pinnedItems.forEach(function (it) {
+        var rect = it.wrap.getBoundingClientRect();
+        var scrollable = it.wrap.offsetHeight - it.sticky.offsetHeight;
+        if (scrollable <= 0) return;
+        var progress = (-rect.top) / scrollable;
+        progress = Math.max(0, Math.min(1, progress));
+        var maxTranslate = it.img.offsetHeight - it.sticky.offsetHeight;
+        if (maxTranslate <= 0) return;
+        it.img.style.transform = "translateY(-" + (progress * maxTranslate) + "px)";
       });
       pinTicking = false;
     }
     window.addEventListener("scroll", function () {
-      if (!pinTicking) { window.requestAnimationFrame(updatePinStates); pinTicking = true; }
+      if (!pinTicking) { window.requestAnimationFrame(updatePinned); pinTicking = true; }
     }, { passive: true });
-    window.addEventListener("resize", updatePinStates);
+    window.addEventListener("resize", updatePinned);
+    updatePinned();
   }
 
   /* ---------- Cookie consent (GDPR) ---------- */
@@ -206,6 +200,16 @@
     var statusEl = form.querySelector("[data-form-status]");
     var submitBtn = form.querySelector("[data-form-submit]");
     var submittedAtField = form.querySelector("[data-submitted-at]");
+    var fieldsEl = form.querySelector("[data-form-fields]");
+    var successEl = form.querySelector("[data-form-success]");
+
+    function showSuccess() {
+      if (fieldsEl) fieldsEl.hidden = true;
+      if (successEl) {
+        successEl.hidden = false;
+        successEl.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -220,8 +224,7 @@
       // sending anywhere, so the bot gets no signal that it was caught.
       var honeypot = form.querySelector("[data-honeypot]");
       if (honeypot && honeypot.value) {
-        showStatus(true, form.getAttribute("data-success-text"));
-        form.reset();
+        showSuccess();
         return;
       }
 
@@ -258,27 +261,18 @@
           return res.json().catch(function () { return {}; });
         })
         .then(function () {
-          showStatus(true, form.getAttribute("data-success-text"));
-          form.reset();
+          showSuccess();
         })
         .catch(function () {
           // In this static demo the endpoint isn't live, so treat network/CORS
           // failure as a soft-success placeholder for reviewers, while logging.
           console.warn("[e-VOLK] Contact endpoint not connected yet — wire up CONTACT_ENDPOINT in main.js.");
-          showStatus(true, form.getAttribute("data-success-text"));
-          form.reset();
+          showSuccess();
         })
         .finally(function () {
           submitBtn.disabled = false;
         });
     });
 
-    function showStatus(success, text) {
-      if (!statusEl) return;
-      statusEl.textContent = text;
-      statusEl.classList.remove("is-success", "is-error");
-      statusEl.classList.add(success ? "is-success" : "is-error");
-      statusEl.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
   }
 })();

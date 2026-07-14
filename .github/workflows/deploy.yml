@@ -32,13 +32,6 @@ jobs:
       - name: Build site
         run: python3 build.py
 
-      - name: Add previous-version preview snapshot (for comparison)
-        run: |
-          if [ -d "static-preview" ]; then
-            mkdir -p build/preview
-            cp -r static-preview/* build/preview/
-          fi
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

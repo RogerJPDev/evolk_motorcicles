@@ -205,12 +205,13 @@ p{ margin: 0; }
   margin-inline: auto;
 }
 
-/* Time-based reveal image: pans once automatically over 2.5s when it
-   scrolls into view (not tied to scroll position) — see main.js. */
-.pinned-image-wrap{ position: relative; height: min(48vh, 465px); margin-bottom: clamp(24px, 4vw, 44px); }
+/* Scroll-linked reveal image: frame stays pinned while the image pans
+   from its top portion to its bottom portion as the page scrolls past it.
+   (Promoted from the preview build.) */
+.pinned-image-wrap{ position: relative; height: 36vh; margin-bottom: clamp(16px, 3vw, 32px); }
 .pinned-image-sticky{
-  position: relative;
-  height: 100%;
+  position: sticky; top: 96px;
+  height: min(32vh, 310px);
   border-radius: var(--radius-l);
   overflow: hidden;
   background: var(--c-grey);
@@ -219,15 +220,16 @@ p{ margin: 0; }
 .pinned-image-track img{
   position:absolute; top:0; left:0; width:100%; height:230%;
   object-fit:cover; will-change:transform;
-  transition: transform 2.5s cubic-bezier(.16,.84,.44,1);
+  transition: transform .5s linear;
 }
 @media (max-width: 900px){
-  .pinned-image-wrap{ height:min(39vh,345px); }
+  .pinned-image-sticky{ top:76px; height:min(26vh,230px); }
+  .pinned-image-wrap{ height:29vh; }
 }
 @media (prefers-reduced-motion: reduce){
   .pinned-image-wrap{ height:auto; }
-  .pinned-image-sticky{ aspect-ratio:4/3; }
-  .pinned-image-track img{ position:static; height:100%; transform:none !important; transition:none; }
+  .pinned-image-sticky{ position:relative; top:0; height:auto; aspect-ratio:4/3; }
+  .pinned-image-track img{ position:static; height:100%; transform:none !important; }
 }
 
 /* Grid layouts */
@@ -327,6 +329,13 @@ p{ margin: 0; }
 .consent-row a{ text-decoration: underline; color: var(--c-black); }
 .form-note{ font-size:.82rem; color: var(--c-black-40); }
 .form-status{ padding: 16px 20px; border-radius: var(--radius-s); font-weight:600; display:none; }
+.form-success{
+  display:flex; flex-direction:column; gap:14px;
+  align-items:center; text-align:center; justify-content:center;
+  min-height: 320px; padding: 32px 16px;
+}
+.form-success[hidden]{ display:none; }
+.form-success h3{ font-size: 1.6rem; }
 .form-status.is-success{ display:block; background: rgba(215,245,74,.28); color:#3d4a05; }
 .form-status.is-error{ display:block; background: rgba(220,60,60,.1); color:#a32020; }
 .honeypot-field{

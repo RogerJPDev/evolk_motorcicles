@@ -179,6 +179,11 @@ links = "\n    ".join(f'<li><a href="{BASE_PATH}/{loc}/index.html">{content[loc]
 with open(os.path.join(BUILD, "index.html"), "w", encoding="utf-8") as f:
     f.write(root_index.format(base=BASE_URL, base_path=BASE_PATH, locales=json.dumps(LOCALES), links=links))
 
+# ---- 404 page (root-level, served for any unmatched path under the site) ----
+tpl_404 = env.get_template("404.html")
+with open(os.path.join(BUILD, "404.html"), "w", encoding="utf-8") as f:
+    f.write(tpl_404.render(base_path=BASE_PATH, base_url=BASE_URL))
+
 # ---- robots.txt + sitemap.xml ----
 robots = f"User-agent: *\nAllow: /\nSitemap: {BASE_URL}/sitemap.xml\n"
 with open(os.path.join(BUILD, "robots.txt"), "w", encoding="utf-8") as f:
