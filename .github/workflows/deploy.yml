@@ -1,4 +1,10 @@
-name: Build and deploy to GitHub Pages
+name: Build and push to deploy branch
+
+# Builds the static site from src/ on every push to main, then pushes the
+# finished HTML/CSS/JS/images to the "hostinger-deploy" branch — a clean
+# branch containing ONLY the built site (nothing else), with files sitting
+# at the branch root exactly as they need to appear in Hostinger's
+# public_html. Hostinger's Git integration pulls from that branch.
 
 on:
   push:
@@ -6,16 +12,10 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  contents: write
 
 jobs:
-  build:
+  build-and-push:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,18 +32,10 @@ jobs:
       - name: Build site
         run: python3 build.py
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Push build output to hostinger-deploy branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: build
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: hostinger-deploy
+          force_orphan: true

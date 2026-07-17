@@ -6,7 +6,7 @@
   var GA_ID = "G-6ZL1WGB0QX";      // Real GA4 Measurement ID
   var GTM_ID = "GTM-NBDXFLKF";     // Real GTM container ID
   var CLARITY_ID = "xk94nk934k";   // Real Microsoft Clarity project ID
-  var CONTACT_ENDPOINT = "https://api.e-volk.example.com/v1/contact"; // TODO: replace with real backend endpoint
+  var CONTACT_ENDPOINT = "https://ati2yzuclzrbmwr5q2j6scz2wy0cbwey.lambda-url.eu-north-1.on.aws/"; // Real registration backend (CORS-locked to https://www.evolkmotorcycles.com)
 
   /* ---------- Mobile nav ---------- */
   var toggle = document.querySelector(".nav-toggle");
@@ -204,11 +204,22 @@
     var successEl = form.querySelector("[data-form-success]");
 
     function showSuccess() {
+      if (statusEl) { statusEl.classList.remove("is-error"); statusEl.textContent = ""; }
       if (fieldsEl) fieldsEl.hidden = true;
       if (successEl) {
         successEl.hidden = false;
         successEl.scrollIntoView({ behavior: "smooth", block: "center" });
       }
+    }
+
+    // Shown on a real failure (network error, or the API returning a 4xx/5xx).
+    // Never exposes the API's raw error message — always a friendly, generic
+    // one — and leaves the form visible so the visitor can fix and retry.
+    function showError() {
+      if (!statusEl) return;
+      statusEl.textContent = form.getAttribute("data-error-text");
+      statusEl.classList.add("is-error");
+      statusEl.scrollIntoView({ behavior: "smooth", block: "center" });
     }
 
     form.addEventListener("submit", function (e) {
@@ -228,46 +239,50 @@
         return;
       }
 
+      if (statusEl) { statusEl.classList.remove("is-error"); statusEl.textContent = ""; }
       if (submittedAtField) submittedAtField.value = new Date().toISOString();
 
+      var interestField = form.querySelector('input[name="interest"]:checked');
+
       var payload = {
-        interest: (form.querySelector('input[name="interest"]:checked') || {}).value || null,
+        interest: interestField ? interestField.value : null,  // "invest" | "keep_informed" — same values across all 5 locales
         email: form.email.value.trim(),
         message: form.message.value.trim(),
-        phone: form.phone.value.trim() || null,
+        phone: form.phone.value.trim(),  // "" when not provided
         consent: !!form.consent.checked,
-        locale: document.documentElement.lang,
+        locale: document.documentElement.lang,  // "ca" | "es" | "it" | "fr" | "pt"
         submitted_at: submittedAtField ? submittedAtField.value : new Date().toISOString()
       };
 
       submitBtn.disabled = true;
 
-      // NOTE: Encryption + storage happens server-side. The payload below is sent
-      // over HTTPS (TLS in transit) to the backend, which is responsible for:
-      //   1. Encrypting the record (e.g. AES-256) before writing to AWS (DynamoDB/RDS).
-      //   2. Sending a confirmation email to the submitter.
-      //   3. Notifying pau.pinazo.evolk@gmail.com and roger.joan.evolk@gmail.com.
-      //   4. Re-checking the honeypot field server-side too — a bot that skips
-      //      the JS entirely and POSTs directly to the endpoint would bypass
-      //      this client-side check.
-      // This demo posts to a placeholder endpoint — connect CONTACT_ENDPOINT to your real API.
+      // Registration backend. Expects the exact JSON shape above; returns
+      // { customer_id, inserted } on success. CORS on the Lambda is locked to
+      // https://www.evolkmotorcycles.com, so this call only succeeds when the
+      // site is actually served from that origin (not localhost, not a
+      // preview URL, not the GitHub Pages fallback URL).
       fetch(CONTACT_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
       })
         .then(function (res) {
-          if (!res.ok) throw new Error("bad status");
+          if (!res.ok) {
+            // Read the API's error body for our own logging only — never
+            // shown to the visitor, per the "don't expose raw error" rule.
+            return res.json().catch(function () { return {}; }).then(function (body) {
+              throw new Error((body && body.error) || ("Request failed with status " + res.status));
+            });
+          }
           return res.json().catch(function () { return {}; });
         })
-        .then(function () {
+        .then(function (data) {
+          // data: { customer_id, inserted } — show success either way.
           showSuccess();
         })
-        .catch(function () {
-          // In this static demo the endpoint isn't live, so treat network/CORS
-          // failure as a soft-success placeholder for reviewers, while logging.
-          console.warn("[e-VOLK] Contact endpoint not connected yet — wire up CONTACT_ENDPOINT in main.js.");
-          showSuccess();
+        .catch(function (err) {
+          console.error("[e-VOLK] Contact form submission failed:", err);
+          showError();
         })
         .finally(function () {
           submitBtn.disabled = false;

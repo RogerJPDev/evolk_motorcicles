@@ -4,8 +4,8 @@ from jinja2 import Environment, FileSystemLoader
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "src")
 BUILD = os.path.join(ROOT, "build")
-BASE_URL = "https://rogerjpdev.github.io/evolk_motorcicles"
-BASE_PATH = "/evolk_motorcicles"
+BASE_URL = "https://www.evolkmotorcycles.com"
+BASE_PATH = ""
 
 LOCALES = ["ca", "es", "it", "fr", "pt"]
 
@@ -189,8 +189,38 @@ robots = f"User-agent: *\nAllow: /\nSitemap: {BASE_URL}/sitemap.xml\n"
 with open(os.path.join(BUILD, "robots.txt"), "w", encoding="utf-8") as f:
     f.write(robots)
 
-with open(os.path.join(BUILD, ".nojekyll"), "w", encoding="utf-8") as f:
-    f.write("")
+# ---- .htaccess (Apache — this is what Hostinger's shared hosting runs) ----
+htaccess = """# e-VOLK — Apache config for Hostinger shared hosting
+
+# Force https:// and the canonical www subdomain (matches the CORS allowlist
+# on the contact-form backend, which only accepts requests from
+# https://www.evolkmotorcycles.com).
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^evolkmotorcycles\\.com$ [NC]
+RewriteRule ^(.*)$ https://www.evolkmotorcycles.com/$1 [L,R=301]
+
+# Custom 404 page
+ErrorDocument 404 /404.html
+
+# Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# Caching for static assets (images/CSS/JS change filenames rarely; HTML doesn't get cached)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+"""
+with open(os.path.join(BUILD, ".htaccess"), "w", encoding="utf-8") as f:
+    f.write(htaccess)
 
 url_entries = []
 for loc in LOCALES:
